@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserManajemen\PermissionController;
+use App\Http\Controllers\UserManajemen\RoleController;
+use App\Http\Controllers\UserManajemen\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -18,6 +21,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::prefix('/akun')->name('akun.')->group(function () {
+        Route::resource('user', UserController::class);
+        Route::resource('permission', PermissionController::class);
+        Route::resource('role', RoleController::class);
+    });
 });
 
 require __DIR__ . '/auth.php';

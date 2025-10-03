@@ -52,7 +52,7 @@
 
      <ul class="menu-inner py-1">
          <!-- Dashboards -->
-         <li class="menu-item active open">
+         <li class="menu-item">
              <a href="javascript:void(0);" class="menu-link menu-toggle">
                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
                  <div data-i18n="Dashboards">Dashboards</div>
@@ -64,6 +64,35 @@
                          <div data-i18n="Analytics">Analytics</div>
                      </a>
                  </li>
+             </ul>
+         </li>
+
+         <li class="menu-header small text-uppercase">
+             <span class="menu-header-text" data-i18n="Apps & Pages">Account Management</span>
+         </li>
+         <li class="menu-item @if (request()->routeIs('akun.*')) active open @endif">
+             <a href="javascript:void(0);" class="menu-link menu-toggle">
+                 <i class="menu-icon tf-icons bx bx-cart-alt"></i>
+                 <div data-i18n="Manajemen Akun">Manajemen Akun</div>
+             </a>
+             <ul class="menu-sub">
+                 <li class="menu-item @if (request()->routeIs('akun.permission.*')) active @endif">
+                     <a href="{{ route('akun.permission.index') }}" class="menu-link">
+                         <div data-i18n="Permission">Permission</div>
+                     </a>
+                 </li>
+                 <li class="menu-item @if (request()->routeIs('akun.role.*')) active @endif">
+                     <a href="{{ route('akun.role.index') }}" class="menu-link">
+                         <div data-i18n="Role">Role</div>
+                     </a>
+                 </li>
+                 <li class="menu-item @if (request()->routeIs('akun.user.*')) active @endif">
+                     <a href="{{ route('akun.user.index') }}" class="menu-link">
+                         <div data-i18n="User">User</div>
+                     </a>
+                 </li>
+
+
              </ul>
          </li>
 

@@ -23,22 +23,22 @@
             @csrf
             <h6 class="fw-normal">1. User Details</h6>
             <div class="row g-3">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <label class="form-label" for="name">Name <small class="text-danger">*</small></label>
                     <input type="text" id="name" name="name" class="form-control" placeholder="Ex. John Doe"
                         required>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <label for="username" class="form-label">Username <small class="text-danger">*</small></label>
                     <input type="text" id="username" name="username" class="form-control" placeholder="Ex. johndoe2530"
                         required>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <label class="form-label" for="email">Email <small class="text-danger">*</small></label>
                     <input type="email" id="email" name="email" class="form-control"
                         placeholder="Ex. johndoe@example.com" required>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <label class="form-label" for="password">Password <small class="text-danger">*</small></label>
                     <input type="password" id="password" name="password" class="form-control"
                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" required>
@@ -47,7 +47,7 @@
             <hr class="my-4 mx-n4">
             <h6 class="fw-normal">2. Role Details</h6>
             <div class="row g-3">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <label class="form-label" for="role">Role <small class="text-danger">*</small></label>
                     <div class="row mt-2">
                         @foreach ($roles as $item)
@@ -68,7 +68,7 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-md-12 d-none" id="unit-section">
+                {{-- <div class="col-md-12 d-none" id="unit-section">
                     <label class="form-label" for="unit">Unit <small class="text-danger">*</small></label>
                     <select class="select2 form-select" id="unit" name="unit" required>
                         <option value="">Select Unit</option>
@@ -76,7 +76,7 @@
                             <option value="{{ $item->id }}">{{ $item->nama }}</option>
                         @endforeach
                     </select>
-                </div>
+                </div> --}}
             </div>
             <div class="pt-4 float-end">
                 <button type="submit" class="btn btn-primary">Submit</button>

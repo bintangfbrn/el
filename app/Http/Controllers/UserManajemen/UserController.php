@@ -77,7 +77,7 @@ class UserController extends Controller
         PermissionChecking(['create_user']);
         $data = [
             'roles' => Role::all(),
-            'unit' => Unit::get(),
+            // 'unit' => Unit::get(),
         ];
 
         return view('UserManajemen.user.create', $data);
@@ -100,7 +100,7 @@ class UserController extends Controller
                 'username' => $request->username,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'id_unit' => $request->unit
+                // 'id_unit' => $request->unit
             ])->assignRole($request->roles);
 
             log_status([

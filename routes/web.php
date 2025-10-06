@@ -11,6 +11,9 @@ Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
         ->name('index');
     Route::post('login', [AuthenticatedSessionController::class, 'store'])->name('login');
+    Route::get('/', function () {
+        return redirect()->route('index');
+    });
 });
 
 Route::get('/dashboard', function () {

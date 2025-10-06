@@ -4,13 +4,32 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
-
+use App\Models\LogStatus;
 
 
 if (!function_exists('loggedin')) {
     function loggedin()
     {
         return Auth::check() || user() !== null;
+    }
+}
+
+if (!function_exists('log_status')) {
+    function log_status($data)
+    {
+        try {
+            LogStatus::create([
+                'id_detail'           => $data['id_detail'],
+                'model'               => $data['model'] ?? null,
+                'deskripsi'           => $data['deskripsi'] ?? null,
+                'controller_function' => $data['controller_function'] ?? null,
+                'id_user'             => auth()->id(),
+                'nama'                => auth()->user()->name,
+                'ip_address'          => request()->ip()
+            ]);
+        } catch (\Exception $e) {
+            Log::error('DB Logging Error: ' . $e->getMessage());
+        }
     }
 }
 

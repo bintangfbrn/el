@@ -49,20 +49,79 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>`;
         container.insertAdjacentHTML('beforeend', html);
+
+        // Show success message
+        Swal.fire({
+            icon: 'success',
+            title: 'Feature Added',
+            text: 'New feature has been added successfully',
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+        });
     });
 
     container.addEventListener('click', function (e) {
         if (e.target.classList.contains('remove-feature')) {
             const featureItems = container.querySelectorAll('.feature-item');
             if (featureItems.length > 1) {
-                e.target.closest('.feature-item').remove();
-                updateFeatureNumbers();
+                // Show Yes/No confirmation dialog before removing
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Do you want to remove this feature?",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Yes, remove it!',
+                    cancelButtonText: 'No, cancel!',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const removedItem = e.target.closest('.feature-item');
+                        removedItem.remove();
+                        updateFeatureNumbers();
+
+                        // Show success message
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Removed!',
+                            text: 'Feature has been removed successfully',
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true
+                        });
+                    } else if (result.dismiss === Swal.DismissReason.cancel) {
+                        // Show cancel message
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Cancelled',
+                            text: 'Feature removal was cancelled',
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true
+                        });
+                    }
+                });
             } else {
-                alert('Minimal harus ada 1 feature');
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Cannot Remove',
+                    text: 'Minimum must have 1 feature',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#3085d6'
+                });
             }
         }
     });
 
     // Inisialisasi nomor feature pertama kali
     updateFeatureNumbers();
+
 });

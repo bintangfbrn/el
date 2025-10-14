@@ -12,7 +12,6 @@ class ServiceHighlightImage extends Model
     protected $fillable = [
         'highlight_id',
         'image_path',
-        'order_index',
     ];
 
     /**

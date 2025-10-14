@@ -23,27 +23,17 @@ class ServiceController extends Controller
     {
         PermissionChecking(['view_service', 'create_service', 'edit_service', 'delete_service']);
         $highlight = ServiceHighlight::with(['features', 'images'])->first();
+        $images = ServiceHighlightImage::where('highlight_id', $highlight->id)->get();
 
-        return view('LandingPage.admin.services.index', compact('highlight'));
+        return view('LandingPage.admin.services.index', compact('highlight', 'images'));
     }
 
     public function store(Request $request)
     {
         PermissionChecking(['create_service', 'edit_service']);
 
-        $request->validate([
-            'id' => 'nullable|exists:service_highlights,id',
-            'title' => 'required|string|max:255',
-            'sub_title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'features.*.icon' => 'nullable|string|max:255',
-            'features.*.title' => 'required|string|max:255',
-            'features.*.description' => 'nullable|string',
-            'image_1' => 'nullable|file|mimes:jpg,jpeg,png,webp,pdf|max:5120',
-            'image_2' => 'nullable|file|mimes:jpg,jpeg,png,webp,pdf|max:5120',
-            'image_3' => 'nullable|file|mimes:jpg,jpeg,png,webp,pdf|max:5120',
-            'image_4' => 'nullable|file|mimes:jpg,jpeg,png,webp,pdf|max:5120',
-        ]);
+        // Show confirmation before saving (optional - if you want confirmation on form submit)
+        // This would require additional JavaScript on the form submit
 
         DB::beginTransaction();
 
@@ -55,7 +45,7 @@ class ServiceController extends Controller
                 ],
                 [
                     'title' => $request->title,
-                    'sub_title' => $request->sub_title,
+                    'subtitle' => $request->sub_title,
                     'description' => $request->description,
                 ]
             );
@@ -92,16 +82,54 @@ class ServiceController extends Controller
                 }
             }
 
+            if ($request->hasFile('images')) {
+                foreach ($request->file('images') as $index => $file) {
+                    // Skip jika file kosong
+                    if (!$file || !$file->isValid()) continue;
+
+                    $path = $file->store('services/gallery', 'public');
+
+                    // Cari image berdasarkan index/position
+                    $existingImage = $highlight->images->get($index);
+
+                    if ($existingImage) {
+                        // Update image yang sudah ada
+                        $existingImage->update([
+                            'image_path' => $path
+                        ]);
+                    } else {
+                        // Buat baru jika belum ada
+                        ServiceHighlightImage::create([
+                            'highlight_id' => $highlight->id,
+                            'image_path' => $path,
+                        ]);
+                    }
+                }
+            }
+
             DB::commit();
 
+            // SweetAlert success message with Yes/No style options
             return redirect()
                 ->back()
-                ->with('success', 'Data Service Highlight berhasil disimpan.');
+                ->with('swal', [
+                    'icon' => 'success',
+                    'title' => 'Success!',
+                    'text' => 'Data Service Highlight berhasil disimpan.',
+                    'confirmButtonText' => 'OK'
+                ]);
         } catch (\Exception $e) {
             DB::rollBack();
+
+            // SweetAlert error message
             return redirect()
                 ->back()
-                ->with('error', 'Terjadi kesalahan: ' . $e->getMessage())
+                ->with('swal', [
+                    'icon' => 'error',
+                    'title' => 'Error!',
+                    'text' => 'Terjadi kesalahan: ' . $e->getMessage(),
+                    'confirmButtonText' => 'OK, I Understand'
+                ])
                 ->withInput();
         }
     }

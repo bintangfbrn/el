@@ -66,36 +66,78 @@
                  </li>
              </ul>
          </li>
+         @role(['superadmin'])
+             <li class="menu-header small text-uppercase">
+                 <span class="menu-header-text" data-i18n="Account Management">Account Management</span>
+             </li>
+             <li class="menu-item @if (request()->routeIs('akun.*')) active open @endif">
+                 <a href="javascript:void(0);" class="menu-link menu-toggle">
+                     {{-- <i class="menu-icon tf-icons bx bx-cart-alt"></i> --}}
+                     <i class="menu-icon tf-icons bx bx-food-menu"></i>
+
+                     <div data-i18n="Manajemen Akun">Manajemen Akun</div>
+                 </a>
+                 <ul class="menu-sub">
+                     <li class="menu-item @if (request()->routeIs('akun.permission.*')) active @endif">
+                         <a href="{{ route('akun.permission.index') }}" class="menu-link">
+                             <div data-i18n="Permission">Permission</div>
+                         </a>
+                     </li>
+                     <li class="menu-item @if (request()->routeIs('akun.role.*')) active @endif">
+                         <a href="{{ route('akun.role.index') }}" class="menu-link">
+                             <div data-i18n="Role">Role</div>
+                         </a>
+                     </li>
+                     <li class="menu-item @if (request()->routeIs('akun.user.*')) active @endif">
+                         <a href="{{ route('akun.user.index') }}" class="menu-link">
+                             <div data-i18n="User">User</div>
+                         </a>
+                     </li>
+
+
+                 </ul>
+             </li>
+         @endrole
+
+
 
          <li class="menu-header small text-uppercase">
-             <span class="menu-header-text" data-i18n="Apps & Pages">Account Management</span>
+             <span class="menu-header-text" data-i18n="Data Pendukung">Data Pendukung</span>
          </li>
-         <li class="menu-item @if (request()->routeIs('akun.*')) active open @endif">
+         <li class="menu-item @if (request()->routeIs('designer.*')) active open @endif">
              <a href="javascript:void(0);" class="menu-link menu-toggle">
                  <i class="menu-icon tf-icons bx bx-cart-alt"></i>
-                 <div data-i18n="Manajemen Akun">Manajemen Akun</div>
+                 {{-- <i class="menu-icon tf-icons bx bx-food-menu"></i> --}}
+
+                 <div data-i18n="Data Pendukung">Data Pendukung</div>
              </a>
              <ul class="menu-sub">
-                 <li class="menu-item @if (request()->routeIs('akun.permission.*')) active @endif">
-                     <a href="{{ route('akun.permission.index') }}" class="menu-link">
-                         <div data-i18n="Permission">Permission</div>
+                 <li class="menu-item @if (request()->routeIs('designer.*')) active @endif">
+                     <a href="{{ route('designer.index') }}" class="menu-link">
+                         <div data-i18n="Designer">Designer</div>
                      </a>
                  </li>
-                 <li class="menu-item @if (request()->routeIs('akun.role.*')) active @endif">
-                     <a href="{{ route('akun.role.index') }}" class="menu-link">
-                         <div data-i18n="Role">Role</div>
-                     </a>
-                 </li>
-                 <li class="menu-item @if (request()->routeIs('akun.user.*')) active @endif">
-                     <a href="{{ route('akun.user.index') }}" class="menu-link">
-                         <div data-i18n="User">User</div>
-                     </a>
-                 </li>
-
-
              </ul>
          </li>
 
+         <li class="menu-header small text-uppercase">
+             <span class="menu-header-text" data-i18n="Landing Page">Landing Page</span>
+         </li>
+         <li class="menu-item @if (request()->routeIs('service.*')) active open @endif">
+             <a href="javascript:void(0);" class="menu-link menu-toggle">
+                 <i class="menu-icon tf-icons bx bx-cart-alt"></i>
+                 {{-- <i class="menu-icon tf-icons bx bx-food-menu"></i> --}}
+
+                 <div data-i18n="Landing Page">Landing Page</div>
+             </a>
+             <ul class="menu-sub">
+                 <li class="menu-item @if (request()->routeIs('service.*')) active @endif">
+                     <a href="{{ route('service.index') }}" class="menu-link">
+                         <div data-i18n="Service">Service</div>
+                     </a>
+                 </li>
+             </ul>
+         </li>
 
 
      </ul>

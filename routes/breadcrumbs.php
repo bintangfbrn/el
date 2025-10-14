@@ -34,3 +34,11 @@ Breadcrumbs::for('akun.user.create', function ($trail) {
     $trail->parent('akun.user.index');
     $trail->push('Tambah Data', route('akun.user.create'));
 });
+Breadcrumbs::for('designer.index', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push('Designer', route('designer.index'));
+});
+Breadcrumbs::for('service.index', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push('Service', route('service.index'));
+});

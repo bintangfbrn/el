@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DesignController;
+use App\Http\Controllers\LandingPage\ServiceController;
 use App\Http\Controllers\UserManajemen\PermissionController;
 use App\Http\Controllers\UserManajemen\RoleController;
 use App\Http\Controllers\UserManajemen\UserController;
@@ -29,6 +31,14 @@ Route::middleware('auth')->group(function () {
         Route::resource('permission', PermissionController::class);
         Route::resource('role', RoleController::class);
     });
+    Route::resource('designer', DesignController::class);
+    Route::resource('service', ServiceController::class);
+
+
+
+
+    Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
+        ->name('logout');
 });
 
 require __DIR__ . '/auth.php';

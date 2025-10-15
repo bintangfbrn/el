@@ -17,19 +17,7 @@
 
 @section('content')
     {{-- SweetAlert Notifications --}}
-    @if (session('swal'))
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                Swal.fire({
-                    icon: '{{ session('swal.icon') }}',
-                    title: '{{ session('swal.title') }}',
-                    text: '{{ session('swal.text') }}',
-                    confirmButtonText: '{{ session('swal.confirmButtonText', 'OK') }}',
-                    confirmButtonColor: '#3085d6'
-                });
-            });
-        </script>
-    @endif
+
 
     <form action="{{ route('service.store') }}" method="POST" enctype="multipart/form-data" id="form_service_highlight"
         class="needs-validation form-prevent-multiple-submits" novalidate>
@@ -257,8 +245,7 @@
                         text: text,
                         icon: 'question',
                         showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
+                        confirmButtonColor: "#d33",
                         confirmButtonText: 'Yes, ' + (isEdit ? 'Update' : 'Save') + ' it!',
                         cancelButtonText: 'No, cancel!',
                         reverseButtons: true

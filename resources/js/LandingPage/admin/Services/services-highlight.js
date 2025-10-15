@@ -50,17 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>`;
         container.insertAdjacentHTML('beforeend', html);
 
-        // Show success message
-        Swal.fire({
-            icon: 'success',
-            title: 'Feature Added',
-            text: 'New feature has been added successfully',
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true
-        });
+        toastr.success('New feature has been added successfully', 'Feature Added');
     });
 
     container.addEventListener('click', function (e) {
@@ -73,8 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     text: "Do you want to remove this feature?",
                     icon: 'question',
                     showCancelButton: true,
-                    confirmButtonColor: '#d33',
-                    cancelButtonColor: '#3085d6',
+                    confirmButtonColor: "#d33",
                     confirmButtonText: 'Yes, remove it!',
                     cancelButtonText: 'No, cancel!',
                     reverseButtons: true
@@ -84,29 +73,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         removedItem.remove();
                         updateFeatureNumbers();
 
-                        // Show success message
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Removed!',
-                            text: 'Feature has been removed successfully',
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000,
-                            timerProgressBar: true
-                        });
+                        toastr.success('Matakuliah Berhasil Dipilih', 'Tambah Berhasil');
                     } else if (result.dismiss === Swal.DismissReason.cancel) {
-                        // Show cancel message
-                        Swal.fire({
-                            icon: 'info',
-                            title: 'Cancelled',
-                            text: 'Feature removal was cancelled',
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000,
-                            timerProgressBar: true
-                        });
+                        toastr.info('Feature removal was cancelled', 'Cancelled');
                     }
                 });
             } else {
@@ -114,8 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     icon: 'warning',
                     title: 'Cannot Remove',
                     text: 'Minimum must have 1 feature',
-                    confirmButtonText: 'OK',
-                    confirmButtonColor: '#3085d6'
+
                 });
             }
         }

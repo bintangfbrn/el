@@ -23,7 +23,8 @@ class ServiceController extends Controller
     {
         PermissionChecking(['view_service', 'create_service', 'edit_service', 'delete_service']);
         $highlight = ServiceHighlight::with(['features', 'images'])->first();
-        $images = ServiceHighlightImage::where('highlight_id', $highlight->id)->get();
+
+        $images = $highlight ? ServiceHighlightImage::where('highlight_id', $highlight->id)->get() : collect();
 
         return view('LandingPage.admin.services.index', compact('highlight', 'images'));
     }
@@ -81,24 +82,38 @@ class ServiceController extends Controller
                     }
                 }
             }
-
             if ($request->hasFile('images')) {
                 foreach ($request->file('images') as $index => $file) {
-                    // Skip jika file kosong
+                    // Skip jika tidak ada file atau file tidak valid
                     if (!$file || !$file->isValid()) continue;
 
-                    $path = $file->store('services/gallery', 'public');
+                    // Buat nama file unik
+                    $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
 
-                    // Cari image berdasarkan index/position
+                    // Tentukan path tujuan (folder harus ada)
+                    $destination = public_path('storage/services');
+
+                    // Pastikan folder ada, kalau belum, buat foldernya
+                    if (!file_exists($destination)) {
+                        mkdir($destination, 0755, true);
+                    }
+
+                    // Pindahkan file ke folder public/storage/YUDISIUM
+                    $file->move($destination, $fileName);
+
+                    // Simpan path relatif (agar mudah dipanggil di view)
+                    $path = 'services/' . $fileName;
+
+                    // Cek apakah ada gambar dengan index yang sama
                     $existingImage = $highlight->images->get($index);
 
                     if ($existingImage) {
-                        // Update image yang sudah ada
+                        // Update image lama
                         $existingImage->update([
                             'image_path' => $path
                         ]);
                     } else {
-                        // Buat baru jika belum ada
+                        // Tambah image baru
                         ServiceHighlightImage::create([
                             'highlight_id' => $highlight->id,
                             'image_path' => $path,
@@ -106,6 +121,7 @@ class ServiceController extends Controller
                     }
                 }
             }
+
 
             DB::commit();
 

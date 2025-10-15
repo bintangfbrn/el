@@ -162,7 +162,36 @@
     <script src="{{ asset('assets/vendor/libs/toastr/toastr.js') }}"></script>
     <script src="{{ asset('assets/vendor/libs/flatpickr/flatpickr.js') }}"></script>
 
+    <script>
+        let flashdatasukses = $('.success-session').data('flashdata');
+        let flashdataerror = $('.error-session').data('flashdata');
+        let flashdatawarning = $('.warning-session').data('flashdata');
 
+        if (flashdatasukses) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: flashdatasukses,
+                type: 'success'
+            })
+        }
+        if (flashdataerror) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: flashdataerror,
+                type: 'error'
+            })
+        }
+        if (flashdatawarning) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Peringatan !',
+                text: flashdatawarning,
+                type: 'warning'
+            })
+        }
+    </script>
     <!-- Main JS -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
     @vite(['resources/js/general.js'])

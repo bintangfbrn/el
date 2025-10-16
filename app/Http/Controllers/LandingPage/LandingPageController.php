@@ -11,10 +11,7 @@ class LandingPageController extends Controller
 {
     public function index_services()
     {
-
         $highlight = ServiceHighlight::with(['features', 'images'])->first();
-
-
         $features = $highlight ? $highlight->features : collect();
         $images = $highlight ? $highlight->images : collect();
 

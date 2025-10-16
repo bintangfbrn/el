@@ -14,9 +14,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
-                    <!-- Service Item Start -->
+
                     <div class="service-item wow fadeInUp">
-                        <!-- Service Image Start -->
+
                         <div class="service-image">
                             <a href="service-single.html" data-cursor-text="View">
                                 <figure class="image-anime">
@@ -24,23 +24,19 @@
                                 </figure>
                             </a>
                         </div>
-                        <!-- Service Image End -->
 
-                        <!-- Service Button Start -->
                         <div class="service-btn">
                             <a href="service-single.html"><img
                                     src="{{ asset('assets/landing-pages/images/arrow-white.svg') }}" alt=""></a>
                         </div>
-                        <!-- Service Button End -->
 
-                        <!-- Service Content Start -->
                         <div class="service-content">
                             <h3><a href="service-single.html">residential interior design</a></h3>
                             <p>We create personalized living spaces that reflect your style and functional needs.</p>
                         </div>
-                        <!-- Service Content End -->
+
                     </div>
-                    <!-- Service Item End -->
+
                 </div>
             </div>
         </div>

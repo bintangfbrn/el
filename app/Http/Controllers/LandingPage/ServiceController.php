@@ -49,7 +49,6 @@ class ServiceController extends Controller
             for ($i = 1; $i <= 4; $i++) {
                 $field = 'image_' . $i;
                 if ($request->hasFile($field)) {
-                    // Hapus file lama jika ada
                     if ($highlight->$field && Storage::disk('public')->exists($highlight->$field)) {
                         Storage::disk('public')->delete($highlight->$field);
                     }
@@ -62,22 +61,15 @@ class ServiceController extends Controller
             $highlight->save();
 
             if ($request->has('features')) {
-
-                // Ambil semua ID fitur yang dikirim dari form
                 $submittedIds = collect($request->features)->pluck('id')->filter()->toArray();
-
-                // Hapus fitur yang tidak dikirim (berarti user hapus di form)
                 ServiceHighlightFeature::where('highlight_id', $highlight->id)
                     ->whereNotIn('id', $submittedIds)
                     ->delete();
 
                 foreach ($request->features as $index => $feature) {
-                    // Skip jika tidak ada title
                     if (empty($feature['title'])) continue;
 
                     $iconPath = $feature['icon'] ?? null;
-
-                    // Jika ada file baru di-upload
                     if ($request->hasFile("features.$index.icon")) {
                         $file = $request->file("features.$index.icon");
 
@@ -91,7 +83,6 @@ class ServiceController extends Controller
                         }
                     }
 
-                    // Update atau buat baru
                     if (!empty($feature['id'])) {
                         $existing = ServiceHighlightFeature::find($feature['id']);
                         if ($existing) {
@@ -111,8 +102,6 @@ class ServiceController extends Controller
                     }
                 }
             }
-
-
 
             if ($request->hasFile('images')) {
                 foreach ($request->file('images') as $index => $file) {
@@ -141,7 +130,6 @@ class ServiceController extends Controller
                 }
             }
 
-
             DB::commit();
             return redirect()
                 ->back()
@@ -153,8 +141,6 @@ class ServiceController extends Controller
                 ]);
         } catch (\Exception $e) {
             DB::rollBack();
-
-            // SweetAlert error message
             return redirect()
                 ->back()
                 ->with('swal', [

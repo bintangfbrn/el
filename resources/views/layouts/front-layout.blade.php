@@ -143,7 +143,7 @@
                             <div class="col-md-6">
                                 <!-- Footer Logo Start -->
                                 <div class="footer-logo">
-                                    <img src=" {{ asset('assets/landing-pages/images/footer-logo.svg') }}"
+                                    <img src="{{ asset('assets/landing-pages/images/footer-logo.svg') }}"
                                         alt="">
                                 </div>
                                 <!-- Footer Logo End -->

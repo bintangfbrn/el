@@ -17,10 +17,10 @@ Route::middleware('guest')->group(function () {
     Route::get('/', function () {
         return redirect()->route('index');
     });
+});
 
-    Route::prefix('/page')->name('landing-page.')->group(function () {
-        Route::get('/services', [LandingPageController::class, 'index_services'])->name('index_services');
-    });
+Route::prefix('/page')->name('landing-page.')->group(function () {
+    Route::get('/services', [LandingPageController::class, 'index_services'])->name('index_services');
 });
 
 Route::get('/dashboard', function () {

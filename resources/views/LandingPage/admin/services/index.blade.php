@@ -87,13 +87,17 @@
                             'features',
                             isset($highlight) && $highlight->features->count() > 0
                                 ? $highlight->features->toArray()
-                                : [['icon' => '', 'title' => '', 'description' => '']],
+                                : [['id' => '', 'icon' => '', 'title' => '', 'description' => '']],
                         );
                     @endphp
 
                     @foreach ($features as $index => $feature)
                         <div class="card mb-3 feature-item">
                             <div class="card-body">
+                                {{-- Hidden ID (penting agar tidak create ulang) --}}
+                                <input type="hidden" name="features[{{ $index }}][id]"
+                                    value="{{ $feature['id'] ?? '' }}">
+
                                 <div class="d-flex justify-content-between align-items-center mb-2">
                                     <h6 class="mb-0">Feature {{ $loop->iteration }}</h6>
                                     @if ($loop->first && count($features) === 1)
@@ -107,13 +111,27 @@
 
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <label>Icon (path / URL)</label>
-                                        <input type="text" name="features[{{ $index }}][icon]"
-                                            class="form-control" value="{{ $feature['icon'] ?? '' }}">
+                                        <label>Icon (Upload Gambar)</label>
+                                        <input type="file" name="features[{{ $index }}][icon]"
+                                            class="form-control feature-icon" accept="image/*">
+
+                                        {{-- Preview icon lama --}}
+                                        @if (!empty($feature['icon']))
+                                            <div class="mt-2 preview-container">
+                                                <img src="{{ asset('storage/' . $feature['icon']) }}" alt="icon preview"
+                                                    class="img-thumbnail" width="80">
+                                            </div>
+                                        @else
+                                            <div class="mt-2 preview-container" style="display:none;">
+                                                <img src="" alt="icon preview" class="img-thumbnail" width="80">
+                                            </div>
+                                        @endif
+
                                         @error("features.{$index}.icon")
                                             <div class="text-danger small mt-1">{{ $message }}</div>
                                         @enderror
                                     </div>
+
                                     <div class="col-md-4">
                                         <label class="req">Title</label>
                                         <input type="text" name="features[{{ $index }}][title]"
@@ -122,6 +140,7 @@
                                             <div class="text-danger small mt-1">{{ $message }}</div>
                                         @enderror
                                     </div>
+
                                     <div class="col-md-4">
                                         <label>Description</label>
                                         <textarea name="features[{{ $index }}][description]" class="form-control" rows="2">{{ $feature['description'] ?? '' }}</textarea>
@@ -134,7 +153,13 @@
                         </div>
                     @endforeach
                 </div>
+
+                {{-- <button type="button" id="add-feature" class="btn btn-outline-primary mt-3">
+                    + Add Feature
+                </button> --}}
             </div>
+
+
         </div>
 
         {{-- ===== Upload Images Section ===== --}}
@@ -148,7 +173,7 @@
                 <div class="row">
                     <!-- Image 1 -->
                     <div class="col-md-3 mb-3">
-                        <label for="images_1" class="req">Image 1</label>
+                        <label for="images_1" class="req">Image 1 (Ukuran Gambar 394 x 300)</label>
                         <input type="file" name="images[]" id="images_1" class="form-control"
                             accept="image/*,application/pdf">
 
@@ -163,7 +188,7 @@
 
                     <!-- Image 2 -->
                     <div class="col-md-3 mb-3">
-                        <label for="images_2" class="req">Image 2</label>
+                        <label for="images_2" class="req">Image 2 (Ukuran Gambar 302 x 300)</label>
                         <input type="file" name="images[]" id="images_2" class="form-control"
                             accept="image/*,application/pdf">
 
@@ -178,7 +203,7 @@
 
                     <!-- Image 3 -->
                     <div class="col-md-3 mb-3">
-                        <label for="images_3" class="req">Image 3</label>
+                        <label for="images_3" class="req">Image 3 (Ukuran Gambar 474 x 352)</label>
                         <input type="file" name="images[]" id="images_3" class="form-control"
                             accept="image/*,application/pdf">
 
@@ -193,7 +218,7 @@
 
                     <!-- Image 4 -->
                     <div class="col-md-3 mb-3">
-                        <label for="images_4" class="req">Image 4</label>
+                        <label for="images_4" class="req">Image 4 (Ukuran Gambar 222 x 352)</label>
                         <input type="file" name="images[]" id="images_4" class="form-control"
                             accept="image/*,application/pdf">
 

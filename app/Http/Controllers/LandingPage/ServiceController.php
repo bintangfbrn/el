@@ -32,14 +32,9 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         PermissionChecking(['create_service', 'edit_service']);
-
-        // Show confirmation before saving (optional - if you want confirmation on form submit)
-        // This would require additional JavaScript on the form submit
-
         DB::beginTransaction();
 
         try {
-            // Cek apakah ini update atau create
             $highlight = ServiceHighlight::updateOrCreate(
                 [
                     'id' => $request->id,
@@ -51,7 +46,6 @@ class ServiceController extends Controller
                 ]
             );
 
-            // Upload image_1 sampai image_4
             for ($i = 1; $i <= 4; $i++) {
                 $field = 'image_' . $i;
                 if ($request->hasFile($field)) {
@@ -67,53 +61,78 @@ class ServiceController extends Controller
 
             $highlight->save();
 
-            // Update Features - hapus yang lama dulu
-            $highlight->features()->delete();
-
             if ($request->has('features')) {
-                foreach ($request->features as $feature) {
-                    if (!empty($feature['title'])) { // Hanya simpan jika title tidak kosong
+
+                // Ambil semua ID fitur yang dikirim dari form
+                $submittedIds = collect($request->features)->pluck('id')->filter()->toArray();
+
+                // Hapus fitur yang tidak dikirim (berarti user hapus di form)
+                ServiceHighlightFeature::where('highlight_id', $highlight->id)
+                    ->whereNotIn('id', $submittedIds)
+                    ->delete();
+
+                foreach ($request->features as $index => $feature) {
+                    // Skip jika tidak ada title
+                    if (empty($feature['title'])) continue;
+
+                    $iconPath = $feature['icon'] ?? null;
+
+                    // Jika ada file baru di-upload
+                    if ($request->hasFile("features.$index.icon")) {
+                        $file = $request->file("features.$index.icon");
+
+                        if ($file && $file->isValid()) {
+                            $destination = public_path('storage/services/icons');
+                            if (!file_exists($destination)) mkdir($destination, 0775, true);
+
+                            $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+                            $file->move($destination, $fileName);
+                            $iconPath = 'services/icons/' . $fileName;
+                        }
+                    }
+
+                    // Update atau buat baru
+                    if (!empty($feature['id'])) {
+                        $existing = ServiceHighlightFeature::find($feature['id']);
+                        if ($existing) {
+                            $existing->update([
+                                'icon' => $iconPath ?? $existing->icon,
+                                'title' => $feature['title'],
+                                'description' => $feature['description'] ?? null,
+                            ]);
+                        }
+                    } else {
                         ServiceHighlightFeature::create([
                             'highlight_id' => $highlight->id,
-                            'icon' => $feature['icon'] ?? null,
+                            'icon' => $iconPath,
                             'title' => $feature['title'],
                             'description' => $feature['description'] ?? null,
                         ]);
                     }
                 }
             }
+
+
+
             if ($request->hasFile('images')) {
                 foreach ($request->file('images') as $index => $file) {
-                    // Skip jika tidak ada file atau file tidak valid
                     if (!$file || !$file->isValid()) continue;
 
-                    // Buat nama file unik
                     $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
-
-                    // Tentukan path tujuan (folder harus ada)
                     $destination = public_path('storage/services');
-
-                    // Pastikan folder ada, kalau belum, buat foldernya
                     if (!file_exists($destination)) {
                         mkdir($destination, 0755, true);
                     }
 
-                    // Pindahkan file ke folder public/storage/YUDISIUM
                     $file->move($destination, $fileName);
-
-                    // Simpan path relatif (agar mudah dipanggil di view)
                     $path = 'services/' . $fileName;
-
-                    // Cek apakah ada gambar dengan index yang sama
                     $existingImage = $highlight->images->get($index);
 
                     if ($existingImage) {
-                        // Update image lama
                         $existingImage->update([
                             'image_path' => $path
                         ]);
                     } else {
-                        // Tambah image baru
                         ServiceHighlightImage::create([
                             'highlight_id' => $highlight->id,
                             'image_path' => $path,
@@ -124,8 +143,6 @@ class ServiceController extends Controller
 
 
             DB::commit();
-
-            // SweetAlert success message with Yes/No style options
             return redirect()
                 ->back()
                 ->with('swal', [

@@ -1,86 +1,95 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="Awaiken">
-	<!-- Page Title -->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Awaiken">
+    <!-- Page Title -->
     <title>Inspaire - Architecture and Interior Design HTML Template</title>
-	<!-- Favicon Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
-	<!-- Google Fonts Css-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <!-- Google Fonts Css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-	<!-- Bootstrap Css -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<!-- SlickNav Css -->
-	<link href="css/slicknav.min.css" rel="stylesheet">
-	<!-- Swiper Css -->
-	<link rel="stylesheet" href="css/swiper-bundle.min.css">
-	<!-- Font Awesome Icon Css-->
-	<link href="css/all.min.css" rel="stylesheet" media="screen">
-	<!-- Animated Css -->
-	<link href="css/animate.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- SlickNav Css -->
+    <link href="css/slicknav.min.css" rel="stylesheet">
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- Font Awesome Icon Css-->
+    <link href="css/all.min.css" rel="stylesheet" media="screen">
+    <!-- Animated Css -->
+    <link href="css/animate.css" rel="stylesheet">
     <!-- Magnific Popup Core Css File -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<!-- Mouse Cursor Css File -->
-	<link rel="stylesheet" href="css/mousecursor.css">
-	<!-- Main Custom Css -->
-	<link href="css/custom.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Mouse Cursor Css File -->
+    <link rel="stylesheet" href="css/mousecursor.css">
+    <!-- Main Custom Css -->
+    <link href="css/custom.css" rel="stylesheet" media="screen">
 </head>
+
 <body>
 
     <!-- Preloader Start -->
-	<div class="preloader">
-		<div class="loading-container">
-			<div class="loading"></div>
-			<div id="loading-icon"><img src="images/loader.svg" alt=""></div>
-		</div>
-	</div>
-	<!-- Preloader End -->
+    <div class="preloader">
+        <div class="loading-container">
+            <div class="loading"></div>
+            <div id="loading-icon"><img src="images/loader.svg" alt=""></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
 
     <!-- Header Start -->
-	<header class="main-header">
-		<div class="header-sticky">
-			<nav class="container">
-				<div class="navbar navbar-expand-lg">
-					<!-- Logo Start -->
-					<a class="navbar-brand" href="./">
-						<img src="images/logo.svg" alt="Logo">
-					</a>
-					<!-- Logo End -->
+    <header class="main-header">
+        <div class="header-sticky">
+            <nav class="container">
+                <div class="navbar navbar-expand-lg">
+                    <!-- Logo Start -->
+                    <a class="navbar-brand" href="./">
+                        <img src="images/logo.svg" alt="Logo">
+                    </a>
+                    <!-- Logo End -->
 
-					<!-- Main Menu Start -->
-					<div class="collapse navbar-collapse main-menu">
+                    <!-- Main Menu Start -->
+                    <div class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
                             <ul class="navbar-nav mr-auto" id="menu">
                                 <li class="nav-item submenu"><a class="nav-link" href="./">Home</a>
                                     <ul>
                                         <li class="nav-item"><a class="nav-link" href="index.html">Home - Image</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="index-video.html">Home - Video</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="index-slider.html">Home - Slider</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="index-video.html">Home -
+                                                Video</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="index-slider.html">Home -
+                                                Slider</a></li>
                                     </ul>
-                                </li>                                
+                                </li>
                                 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a>
                                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                                 <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                                 <li class="nav-item submenu"><a class="nav-link" href="#">Pages</a>
-                                    <ul>                                        
-                                        <li class="nav-item"><a class="nav-link" href="service-single.html">Service Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="project-single.html">Project Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="image-gallery.html">Image Gallery</a></li>
+                                    <ul>
+                                        <li class="nav-item"><a class="nav-link" href="service-single.html">Service
+                                                Details</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="project-single.html">Project
+                                                Details</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog
+                                                Details</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="image-gallery.html">Image
+                                                Gallery</a></li>
                                         <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
                                         <li class="nav-item"><a class="nav-link" href="404.html">404</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>                             
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                             </ul>
                         </div>
                         <!-- Header Btn Start -->
@@ -88,38 +97,19 @@
                             <a href="contact.html" class="btn-default">get in touch</a>
                         </div>
                         <!-- Header Btn End -->
-					</div>
-					<!-- Main Menu End -->
-					<div class="navbar-toggle"></div>
-				</div>
-			</nav>
-			<div class="responsive-menu"></div>
-		</div>
-	</header>
-	<!-- Header End -->
+                    </div>
+                    <!-- Main Menu End -->
+                    <div class="navbar-toggle"></div>
+                </div>
+            </nav>
+            <div class="responsive-menu"></div>
+        </div>
+    </header>
+    <!-- Header End -->
 
     <!-- Page Header Start -->
-	<div class="page-header parallaxie">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<!-- Page Header Box Start -->
-					<div class="page-header-box">
-						<h1 class="text-anime-style-2" data-cursor="-opaque">Residential design</h1>
-						<nav class="wow fadeInUp">
-							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="./">home</a></li>
-								<li class="breadcrumb-item"><a href="services.html">services</a></li>
-								<li class="breadcrumb-item active" aria-current="page">residential design</li>
-							</ol>
-						</nav>
-					</div>
-					<!-- Page Header Box End -->
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Page Header End -->
+
+    <!-- Page Header End -->
 
     <!-- Page Service Single Start -->
     <div class="page-service-single">
@@ -209,9 +199,19 @@
 
                         <!-- Secvice Entry Start -->
                         <div class="service-entry">
-                            <p class="wow fadeInUp">Our interior design services are crafted to transform spaces through thoughtful planning, custom furniture, and tailored layouts. We believe that every room should have an efficient flow and a balanced design, so our space planning and layout services aim to optimize each area to fit seamlessly with your lifestyle. With custom furniture design, we create unique pieces that not only enhance the space but reflect your personal style.</p>
+                            <p class="wow fadeInUp">Our interior design services are crafted to transform spaces
+                                through thoughtful planning, custom furniture, and tailored layouts. We believe that
+                                every room should have an efficient flow and a balanced design, so our space planning
+                                and layout services aim to optimize each area to fit seamlessly with your lifestyle.
+                                With custom furniture design, we create unique pieces that not only enhance the space
+                                but reflect your personal style.</p>
 
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">Our offerings also include expert color and material selection, lighting solutions to enhance mood, and soft furnishings to add warmth. From home renovations that revitalize interiors to storage solutions that bring both style and organization, we cover all aspects of interior enhancement. Using 3D visualization, we ensure clients can envision their transformed space, making the design process both transparent and collaborative.</p>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">Our offerings also include expert color and
+                                material selection, lighting solutions to enhance mood, and soft furnishings to add
+                                warmth. From home renovations that revitalize interiors to storage solutions that bring
+                                both style and organization, we cover all aspects of interior enhancement. Using 3D
+                                visualization, we ensure clients can envision their transformed space, making the design
+                                process both transparent and collaborative.</p>
 
                             <!-- Service Entry List Image Start -->
                             <div class="service-entry-list-image">
@@ -245,8 +245,11 @@
                             <!-- Section Title Start -->
                             <div class="section-title">
                                 <h3 class="wow fadeInUp">why choose us</h3>
-                                <h2 class="text-anime-style-2" data-cursor="-opaque">A behind the scenes look at <span>our agency</span></h2>
-                                <p class="wow fadeInUp" data-wow-delay="0.2s">From concept to completion, discover how we bring your vision to life with innovation, collaboration, and expert craftsmanship.</p>
+                                <h2 class="text-anime-style-2" data-cursor="-opaque">A behind the scenes look at
+                                    <span>our agency</span></h2>
+                                <p class="wow fadeInUp" data-wow-delay="0.2s">From concept to completion, discover how
+                                    we bring your vision to life with innovation, collaboration, and expert
+                                    craftsmanship.</p>
                             </div>
                             <!-- Section Title End -->
 
@@ -263,12 +266,13 @@
                                     <!-- Why Choose Item Content Start -->
                                     <div class="why-choose-item-content">
                                         <h3>tailored design solutions</h3>
-                                        <p>We provide personalized interior design services that reflect your unique vision and lifestyle.</p>
+                                        <p>We provide personalized interior design services that reflect your unique
+                                            vision and lifestyle.</p>
                                     </div>
                                     <!-- Why Choose Item Content End -->
                                 </div>
                                 <!-- Why Choose Item End -->
-                                
+
                                 <!-- Why Choose Item Start -->
                                 <div class="why-choose-item wow fadeInUp" data-wow-delay="0.6s">
                                     <!-- Icon Box Start -->
@@ -280,7 +284,8 @@
                                     <!-- Why Choose Item Content Start -->
                                     <div class="why-choose-item-content">
                                         <h3>Seamless Project Management</h3>
-                                        <p>We handle the entire design process, from concept to completion, with flawless execution.</p>
+                                        <p>We handle the entire design process, from concept to completion, with
+                                            flawless execution.</p>
                                     </div>
                                     <!-- Why Choose Item Content End -->
                                 </div>
@@ -297,7 +302,8 @@
                                     <!-- Why Choose Item Content Start -->
                                     <div class="why-choose-item-content">
                                         <h3>Client-Centered Collaboration</h3>
-                                        <p>Your input is valued throughout the entire process, ensuring your vision is fully realized.</p>
+                                        <p>Your input is valued throughout the entire process, ensuring your vision is
+                                            fully realized.</p>
                                     </div>
                                     <!-- Why Choose Item Content End -->
                                 </div>
@@ -312,8 +318,11 @@
                             <!-- Section Title Start -->
                             <div class="section-title">
                                 <h3 class="wow fadeInUp">asked question</h3>
-                                <h2 class="text-anime-style-2" data-cursor="-opaque">Have your any question look <span>here now</span></h2>
-                                <p class="wow fadeInUp" data-wow-delay="0.2s">Nostra turma dedicata consilium arctius operatur ut visionem tuam intelligat et eam ad vitam adducat cum magna cura in singula</p>
+                                <h2 class="text-anime-style-2" data-cursor="-opaque">Have your any question look
+                                    <span>here now</span></h2>
+                                <p class="wow fadeInUp" data-wow-delay="0.2s">Nostra turma dedicata consilium arctius
+                                    operatur ut visionem tuam intelligat et eam ad vitam adducat cum magna cura in
+                                    singula</p>
                             </div>
                             <!-- Section Title End -->
 
@@ -322,13 +331,18 @@
                                 <!-- FAQ Item Start -->
                                 <div class="accordion-item wow fadeInUp">
                                     <h2 class="accordion-header" id="heading1">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                            <span>1.</span>  What is the typical process for starting a design project?
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapse1" aria-expanded="true"
+                                            aria-controls="collapse1">
+                                            <span>1.</span> What is the typical process for starting a design project?
                                         </button>
                                     </h2>
-                                    <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordion">
+                                    <div id="collapse1" class="accordion-collapse collapse show"
+                                        aria-labelledby="heading1" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            <p>Our process starts with a consultation to discuss your vision, followed by planning, design presentation, and implementation to achieve your ideal space.</p>
+                                            <p>Our process starts with a consultation to discuss your vision, followed
+                                                by planning, design presentation, and implementation to achieve your
+                                                ideal space.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -337,13 +351,18 @@
                                 <!-- FAQ Item Start -->
                                 <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
                                     <h2 class="accordion-header" id="heading2">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                            <span>2.</span>  How long does a typical interior design project take?
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse2"
+                                            aria-expanded="false" aria-controls="collapse2">
+                                            <span>2.</span> How long does a typical interior design project take?
                                         </button>
                                     </h2>
-                                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordion">
+                                    <div id="collapse2" class="accordion-collapse collapse"
+                                        aria-labelledby="heading2" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            <p>Our process starts with a consultation to discuss your vision, followed by planning, design presentation, and implementation to achieve your ideal space.</p>
+                                            <p>Our process starts with a consultation to discuss your vision, followed
+                                                by planning, design presentation, and implementation to achieve your
+                                                ideal space.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -352,13 +371,18 @@
                                 <!-- FAQ Item Start -->
                                 <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
                                     <h2 class="accordion-header" id="heading3">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                            <span>3.</span>  Can I incorporate my existing furniture into the new design?
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse3"
+                                            aria-expanded="false" aria-controls="collapse3">
+                                            <span>3.</span> Can I incorporate my existing furniture into the new design?
                                         </button>
                                     </h2>
-                                    <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordion">
+                                    <div id="collapse3" class="accordion-collapse collapse"
+                                        aria-labelledby="heading3" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            <p>Our process starts with a consultation to discuss your vision, followed by planning, design presentation, and implementation to achieve your ideal space.</p>
+                                            <p>Our process starts with a consultation to discuss your vision, followed
+                                                by planning, design presentation, and implementation to achieve your
+                                                ideal space.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -367,13 +391,18 @@
                                 <!-- FAQ Item Start -->
                                 <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
                                     <h2 class="accordion-header" id="heading4">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                            <span>4.</span>  What should I expect during the design consultation?
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse4"
+                                            aria-expanded="false" aria-controls="collapse4">
+                                            <span>4.</span> What should I expect during the design consultation?
                                         </button>
                                     </h2>
-                                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordion">
+                                    <div id="collapse4" class="accordion-collapse collapse"
+                                        aria-labelledby="heading4" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            <p>Our process starts with a consultation to discuss your vision, followed by planning, design presentation, and implementation to achieve your ideal space.</p>
+                                            <p>Our process starts with a consultation to discuss your vision, followed
+                                                by planning, design presentation, and implementation to achieve your
+                                                ideal space.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -382,13 +411,18 @@
                                 <!-- FAQ Item Start -->
                                 <div class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
                                     <h2 class="accordion-header" id="heading5">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                            <span>5.</span>  What should I expect during the design consultation?
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapse5"
+                                            aria-expanded="false" aria-controls="collapse5">
+                                            <span>5.</span> What should I expect during the design consultation?
                                         </button>
                                     </h2>
-                                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordion">
+                                    <div id="collapse5" class="accordion-collapse collapse"
+                                        aria-labelledby="heading5" data-bs-parent="#accordion">
                                         <div class="accordion-body">
-                                            <p>Our process starts with a consultation to discuss your vision, followed by planning, design presentation, and implementation to achieve your ideal space.</p>
+                                            <p>Our process starts with a consultation to discuss your vision, followed
+                                                by planning, design presentation, and implementation to achieve your
+                                                ideal space.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -412,7 +446,7 @@
                 <div class="col-lg-12">
                     <!-- Footer Header Start -->
                     <div class="footer-header">
-                        <div class="row align-items-center">  
+                        <div class="row align-items-center">
                             <div class="col-md-6">
                                 <!-- Footer Logo Start -->
                                 <div class="footer-logo">
@@ -442,7 +476,7 @@
 
                 <div class="col-lg-3 col-md-6">
                     <!-- Footer Links Start -->
-                     <div class="footer-links">
+                    <div class="footer-links">
                         <h3>information</h3>
                         <ul>
                             <li><a href="about.html">about our company</a></li>
@@ -451,13 +485,13 @@
                             <li><a href="blog.html">read our blog</a></li>
                             <li><a href="projects.html">our latest projects</a></li>
                         </ul>
-                     </div>
+                    </div>
                     <!-- Footer Links End -->
                 </div>
 
                 <div class="col-lg-3 col-md-6">
                     <!-- Footer Links Start -->
-                     <div class="footer-links">
+                    <div class="footer-links">
                         <h3>portfolio</h3>
                         <ul>
                             <li><a href="project-single.html">luxury home design</a></li>
@@ -466,7 +500,7 @@
                             <li><a href="project-single.html">residential interior design</a></li>
                             <li><a href="project-single.html">renovation and restoration design</a></li>
                         </ul>
-                     </div>
+                    </div>
                     <!-- Footer Links End -->
                 </div>
 
@@ -514,13 +548,14 @@
                     <!-- Footer Newsletter Form Start -->
                     <div class="footer-latest-news footer-links">
                         <h3>get the latest trending news</h3>
-                        
+
                         <div class="footer-newsletter-form">
                             <p>Your Dream Space Starts Here Get Exclusive Design Straight Your Inbox!</p>
 
                             <form id="newslettersForm" action="#" method="POST">
                                 <div class="form-group">
-                                    <input type="email" name="email" class="form-control"  id="mail" placeholder="Enter your email" required>
+                                    <input type="email" name="email" class="form-control" id="mail"
+                                        placeholder="Enter your email" required>
                                     <button type="submit"><i class="fa-solid fa-arrow-right-long"></i> </button>
                                 </div>
                             </form>
@@ -561,7 +596,7 @@
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
     <!-- Isotop js file -->
-	<script src="js/isotope.min.js"></script>
+    <script src="js/isotope.min.js"></script>
     <!-- Magnific js file -->
     <script src="js/jquery.magnific-popup.min.js"></script>
     <!-- SmoothScroll -->
@@ -581,4 +616,5 @@
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
 </body>
+
 </html>

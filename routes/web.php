@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DesignController;
+use App\Http\Controllers\LandingPage\LandingPageController;
 use App\Http\Controllers\LandingPage\ServiceController;
 use App\Http\Controllers\UserManajemen\PermissionController;
 use App\Http\Controllers\UserManajemen\RoleController;
@@ -15,6 +16,10 @@ Route::middleware('guest')->group(function () {
     Route::post('login', [AuthenticatedSessionController::class, 'store'])->name('login');
     Route::get('/', function () {
         return redirect()->route('index');
+    });
+
+    Route::prefix('/page')->name('landing-page.')->group(function () {
+        Route::get('/services', [LandingPageController::class, 'index_services'])->name('index_services');
     });
 });
 
@@ -33,6 +38,8 @@ Route::middleware('auth')->group(function () {
     });
     Route::resource('designer', DesignController::class);
     Route::resource('service', ServiceController::class);
+
+
 
 
 

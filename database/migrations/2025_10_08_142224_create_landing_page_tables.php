@@ -35,10 +35,10 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug')->unique();
             $table->text('short_description')->nullable();
             $table->longText('description')->nullable();
             $table->string('image')->nullable();
+            $table->string('image_2')->nullable();
             $table->decimal('price_estimation', 15, 2)->nullable();
             $table->timestamps();
         });

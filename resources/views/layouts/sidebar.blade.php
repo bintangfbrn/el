@@ -123,7 +123,9 @@
          <li class="menu-header small text-uppercase">
              <span class="menu-header-text" data-i18n="Landing Page">Landing Page</span>
          </li>
-         <li class="menu-item @if (request()->routeIs('service.*')) active open @endif">
+         <li class="menu-item @if (request()->routeIs('service.*') ||
+                 request()->routeIs('services-items') ||
+                 request()->routeIs('create-services-items')) active open @endif">
              <a href="javascript:void(0);" class="menu-link menu-toggle">
                  <i class="menu-icon tf-icons bx bx-cart-alt"></i>
                  {{-- <i class="menu-icon tf-icons bx bx-food-menu"></i> --}}
@@ -134,6 +136,13 @@
                  <li class="menu-item @if (request()->routeIs('service.*')) active @endif">
                      <a href="{{ route('service.index') }}" class="menu-link">
                          <div data-i18n="Service">Service</div>
+                     </a>
+                 </li>
+             </ul>
+             <ul class="menu-sub">
+                 <li class="menu-item @if (request()->routeIs('services-items') || request()->routeIs('create-services-items')) active @endif">
+                     <a href="{{ route('services-items') }}" class="menu-link">
+                         <div data-i18n="Service Items">Service Items</div>
                      </a>
                  </li>
              </ul>

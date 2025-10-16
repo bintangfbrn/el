@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\LandingPage;
 
 use App\Http\Controllers\Controller;
+use App\Models\Service;
 use App\Models\ServiceHighlight;
 use App\Models\ServiceHighlightImage;
 use Illuminate\Http\Request;
@@ -14,7 +15,14 @@ class LandingPageController extends Controller
         $highlight = ServiceHighlight::with(['features', 'images'])->first();
         $features = $highlight ? $highlight->features : collect();
         $images = $highlight ? $highlight->images : collect();
+        $serviceItems = Service::where('status', 1)->get();
 
-        return view('LandingPage.services', compact('highlight', 'features', 'images'));
+        return view('LandingPage.services', compact('highlight', 'features', 'images', 'serviceItems'));
+    }
+
+    public function services_items(Request $request, $id)
+    {
+        $serviceItems = Service::where('id', $id)->first();
+        return view('LandingPage.services', compact('serviceItems'));
     }
 }

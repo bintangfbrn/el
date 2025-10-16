@@ -38,10 +38,12 @@ Route::middleware('auth')->group(function () {
     });
     Route::resource('designer', DesignController::class);
     Route::resource('service', ServiceController::class);
-
-
-
-
+    Route::get('/services-items', [ServiceController::class, 'index_services_items'])->name('services-items');
+    Route::get('/services-items-create', [ServiceController::class, 'create_services_items'])->name('create-services-items');
+    Route::get('/services-items-edit/{id}', [ServiceController::class, 'edit_services_items'])->name('edit-services-items');
+    Route::put('/services-items-update/{id}', [ServiceController::class, 'updated_services_items'])->name('updated_services_items');
+    Route::get('/services-items-show/{id}', [ServiceController::class, 'show_services_items'])->name('show-services-items');
+    Route::post('/services-items-store', [ServiceController::class, 'store_services_items'])->name('store-services-items');
 
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])

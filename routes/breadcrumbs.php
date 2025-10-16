@@ -42,3 +42,18 @@ Breadcrumbs::for('service.index', function ($trail) {
     $trail->parent('dashboard');
     $trail->push('Service', route('service.index'));
 });
+
+Breadcrumbs::for('services-items', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push('Service Items', route('services-items'));
+});
+
+Breadcrumbs::for('create-services-items', function ($trail) {
+    $trail->parent('services-items');
+    $trail->push('Create Service Items', route('create-services-items'));
+});
+
+Breadcrumbs::for('edit-services-items', function ($trail, $id) {
+    $trail->parent('services-items');
+    $trail->push('Edit Service Items', route('edit-services-items', $id));
+});

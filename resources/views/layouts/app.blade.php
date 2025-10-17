@@ -205,6 +205,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.3.3/css/rowReorder.dataTables.min.css">
     <script src="https://cdn.datatables.net/rowreorder/1.3.3/js/dataTables.rowReorder.min.js"></script>
     @yield('script')
+    @stack('scripts') {{-- Tambahkan ini di bawah yield script --}}
     @if (Session::has('swal'))
         <script>
             Swal.fire({

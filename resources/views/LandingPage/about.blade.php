@@ -1,125 +1,12 @@
-<!DOCTYPE html>
-<html lang="zxx">
-<head>
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="Awaiken">
-	<!-- Page Title -->
-    <title>Inspaire - Architecture and Interior Design HTML Template</title>
-	<!-- Favicon Icon -->
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
-	<!-- Google Fonts Css-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-	<!-- Bootstrap Css -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<!-- SlickNav Css -->
-	<link href="css/slicknav.min.css" rel="stylesheet">
-	<!-- Swiper Css -->
-	<link rel="stylesheet" href="css/swiper-bundle.min.css">
-	<!-- Font Awesome Icon Css-->
-	<link href="css/all.min.css" rel="stylesheet" media="screen">
-	<!-- Animated Css -->
-	<link href="css/animate.css" rel="stylesheet">
-    <!-- Magnific Popup Core Css File -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<!-- Mouse Cursor Css File -->
-	<link rel="stylesheet" href="css/mousecursor.css">
-	<!-- Main Custom Css -->
-	<link href="css/custom.css" rel="stylesheet" media="screen">
-</head>
-<body>
+@extends('layouts.front-layout')
 
-    <!-- Preloader Start -->
-	<div class="preloader">
-		<div class="loading-container">
-			<div class="loading"></div>
-			<div id="loading-icon"><img src="images/loader.svg" alt=""></div>
-		</div>
-	</div>
-	<!-- Preloader End -->
+@section('core-css')
+@endsection
 
-    <!-- Header Start -->
-	<header class="main-header">
-		<div class="header-sticky">
-			<nav class="container">
-				<div class="navbar navbar-expand-lg">
-					<!-- Logo Start -->
-					<a class="navbar-brand" href="./">
-						<img src="images/logo.svg" alt="Logo">
-					</a>
-					<!-- Logo End -->
+@section('helper-js')
+@endsection
 
-					<!-- Main Menu Start -->
-					<div class="collapse navbar-collapse main-menu">
-                        <div class="nav-menu-wrapper">
-                            <ul class="navbar-nav mr-auto" id="menu">
-                                <li class="nav-item submenu"><a class="nav-link" href="./">Home</a>
-                                    <ul>
-                                        <li class="nav-item"><a class="nav-link" href="index.html">Home - Image</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="index-video.html">Home - Video</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="index-slider.html">Home - Slider</a></li>
-                                    </ul>
-                                </li>                                
-                                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a>
-                                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                                <li class="nav-item submenu"><a class="nav-link" href="#">Pages</a>
-                                    <ul>                                        
-                                        <li class="nav-item"><a class="nav-link" href="service-single.html">Service Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="project-single.html">Project Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="blog-single.html">Blog Details</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="image-gallery.html">Image Gallery</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="404.html">404</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>                             
-                            </ul>
-                        </div>
-                        <!-- Header Btn Start -->
-                        <div class="header-btn d-inline-flex">
-                            <a href="contact.html" class="btn-default">get in touch</a>
-                        </div>
-                        <!-- Header Btn End -->
-					</div>
-					<!-- Main Menu End -->
-					<div class="navbar-toggle"></div>
-				</div>
-			</nav>
-			<div class="responsive-menu"></div>
-		</div>
-	</header>
-	<!-- Header End -->
-
-    <!-- Page Header Start -->
-	<div class="page-header parallaxie">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<!-- Page Header Box Start -->
-					<div class="page-header-box">
-						<h1 class="text-anime-style-2" data-cursor="-opaque">About us</h1>
-						<nav class="wow fadeInUp">
-							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="./">home</a></li>
-								<li class="breadcrumb-item active" aria-current="page">about us</li>
-							</ol>
-						</nav>
-					</div>
-					<!-- Page Header Box End -->
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Page Header End -->
-
+@section('content')
     <!-- About Us Section Start -->
     <div class="about-us page-about-us">
         <div class="container">
@@ -149,7 +36,7 @@
                             <!-- Feedback Counter End -->
                         </div>
                         <!-- About Image 2 End -->
-    
+
                         <!-- Feedback Counter Start -->
                         <div class="feedback-counter">
                             <p><span class="counter">95</span>%</p>
@@ -166,8 +53,11 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">about us</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Our passion for design, your <span>vision realized</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">Our dedicated team of designers works closely with you to understand your vision and bring it to life with thoughtful attention to detail. Whether it's transforming a single room or an entire home.</p>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">Our passion for design, your <span>vision
+                                    realized</span></h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">Our dedicated team of designers works closely with
+                                you to understand your vision and bring it to life with thoughtful attention to detail.
+                                Whether it's transforming a single room or an entire home.</p>
                         </div>
                         <!-- Section Title End -->
 
@@ -238,7 +128,8 @@
 
                             <div class="about-facility-content">
                                 <h3>reasonable prices</h3>
-                                <p>We produce furniture to fulfill needs of all people and offer it at affordable prices.</p>
+                                <p>We produce furniture to fulfill needs of all people and offer it at affordable prices.
+                                </p>
                             </div>
                         </div>
                         <!-- About Facility Item End -->
@@ -284,7 +175,8 @@
                     <!-- Section Title Start -->
                     <div class="section-title dark-section">
                         <h3 class="wow fadeInUp">vision mission</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">A behind the scenes look at <span>our agency</span></h2>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque">A behind the scenes look at <span>our
+                                agency</span></h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -292,7 +184,8 @@
                 <div class="col-lg-6">
                     <!-- Section Title Content Start -->
                     <div class="section-title-content dark-section">
-                        <p class="wow fadeInUp" data-wow-delay="0.2s">Our portfolio showcases a diverse range of projects, from beautifully crafted residential spaces functional and stylish commercial interiors</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">Our portfolio showcases a diverse range of projects,
+                            from beautifully crafted residential spaces functional and stylish commercial interiors</p>
                     </div>
                     <!-- Section Title Content End -->
                 </div>
@@ -309,11 +202,15 @@
                             </div>
                             <div class="vision-mission-content">
                                 <h3>our vision</h3>
-                                <p>Our vision is rooted in the belief that thoughtfully designed spaces can transform lives, enhancing how people feel, work, and connect. We are committed to creating interiors that reflect our clients' unique identities, blending comfort, functionality, and beauty. By combining timeless design with modern innovations, we craft spaces that are visually stunning and practical.</p>
+                                <p>Our vision is rooted in the belief that thoughtfully designed spaces can transform lives,
+                                    enhancing how people feel, work, and connect. We are committed to creating interiors
+                                    that reflect our clients' unique identities, blending comfort, functionality, and
+                                    beauty. By combining timeless design with modern innovations, we craft spaces that are
+                                    visually stunning and practical.</p>
                             </div>
                         </div>
                         <!-- Vision Mission Item End -->
-    
+
                         <!-- Vision Mission Item Start -->
                         <div class="vision-mission-item wow fadeInUp" data-wow-delay="0.2s">
                             <div class="icon-box">
@@ -321,7 +218,11 @@
                             </div>
                             <div class="vision-mission-content">
                                 <h3>our mission</h3>
-                                <p>Our mission is to deliver exceptional interior designs that enhance the quality of life by prioritizing comfort, functionality, and aesthetics. We aim to create space that are not only visually appealing but also tailored to meet the specific needs and desires of our client By staying true to design innovation, we ensure that every project reflects the perfect balance between style and purpose.</p>
+                                <p>Our mission is to deliver exceptional interior designs that enhance the quality of life
+                                    by prioritizing comfort, functionality, and aesthetics. We aim to create space that are
+                                    not only visually appealing but also tailored to meet the specific needs and desires of
+                                    our client By staying true to design innovation, we ensure that every project reflects
+                                    the perfect balance between style and purpose.</p>
                             </div>
                         </div>
                         <!-- Vision Mission Item End -->
@@ -334,7 +235,7 @@
     <!-- Vision Mission End -->
 
     <!-- Best Seeling Start -->
-     <div class="best-selling">
+    <div class="best-selling">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -351,8 +252,10 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">best selling finishes</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">We use materials only from personally <span>verified suppliers</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">Gloss, matte wood texture, 200+ colors to choose from. Environmentally friendly materials, all certificates are available.</p>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">We use materials only from personally
+                                <span>verified suppliers</span></h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">Gloss, matte wood texture, 200+ colors to choose
+                                from. Environmentally friendly materials, all certificates are available.</p>
                         </div>
                         <!-- Section Title End -->
                     </div>
@@ -369,7 +272,7 @@
                 </div>
             </div>
         </div>
-     </div>
+    </div>
     <!-- Best Seeling End -->
 
     <!-- Our Testimonial Start -->
@@ -392,7 +295,8 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">client testimonials</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Trusted by thousand of <span>people & companies.</span></h2>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">Trusted by thousand of <span>people &
+                                    companies.</span></h2>
                         </div>
                         <!-- Section Title End -->
 
@@ -402,17 +306,19 @@
                                 <div class="swiper-wrapper" data-cursor-text="Drag">
                                     <!-- Testimonial Slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="testimonial-item">	
+                                        <div class="testimonial-item">
                                             <div class="testimonial-rating">
                                                 <i class="fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
-                                            </div>                                        
+                                            </div>
                                             <div class="testimonial-body">
                                                 <div class="testimonial-content">
-                                                    <p>I couldn't be happier with the transformation of my home! From our very first consultation, the team at took the time to understand my vision and preferences.</p>
+                                                    <p>I couldn't be happier with the transformation of my home! From our
+                                                        very first consultation, the team at took the time to understand my
+                                                        vision and preferences.</p>
                                                 </div>
                                             </div>
                                             <div class="testimonial-body">
@@ -420,7 +326,7 @@
                                                     <figure class="image-anime">
                                                         <img src="images/author-1.jpg" alt="">
                                                     </figure>
-                                                </div>            
+                                                </div>
                                                 <div class="author-content">
                                                     <h3>arlene mcCoy</h3>
                                                     <p>co. founder</p>
@@ -432,23 +338,25 @@
 
                                     <!-- Testimonial Slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="testimonial-item">	
+                                        <div class="testimonial-item">
                                             <div class="testimonial-rating">
                                                 <i class="fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
                                                 <i class="fa-solid fa-star"></i>
-                                            </div>                                        
+                                            </div>
                                             <div class="testimonial-content">
-                                                <p>I couldn't be happier with the transformation of my home! From our very first consultation, the team at took the time to understand my vision and preferences.</p>
+                                                <p>I couldn't be happier with the transformation of my home! From our very
+                                                    first consultation, the team at took the time to understand my vision
+                                                    and preferences.</p>
                                             </div>
                                             <div class="testimonial-body">
                                                 <div class="author-image">
                                                     <figure class="image-anime">
                                                         <img src="images/author-1.jpg" alt="">
                                                     </figure>
-                                                </div>            
+                                                </div>
                                                 <div class="author-content">
                                                     <h3>arlene mcCoy</h3>
                                                     <p>co founder</p>
@@ -488,14 +396,15 @@
     <!-- Our Testimonial End -->
 
     <!-- Our Team Section Start -->
-     <div class="our-team">
+    <div class="our-team">
         <div class="container">
             <div class="row section-row align-items-center">
                 <div class="col-lg-5">
                     <!-- Section Title Start -->
                     <div class="section-title">
                         <h3 class="wow fadeInUp">meet our team</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">Creative minds always <span>think something</span></h2>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque">Creative minds always <span>think
+                                something</span></h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -503,7 +412,8 @@
                 <div class="col-lg-7">
                     <!-- Section Title Content Start -->
                     <div class="section-title-content">
-                        <p class="wow fadeInUp" data-wow-delay="0.2s">We offer a range of bespoke interior design services tailored to your unique needs. From concept development to final installation.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">We offer a range of bespoke interior design services
+                            tailored to your unique needs. From concept development to final installation.</p>
                     </div>
                     <!-- Section Title Content End -->
                 </div>
@@ -512,9 +422,9 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <!-- Team Member Item Start -->
-					<div class="team-member-item wow fadeInUp">
+                    <div class="team-member-item wow fadeInUp">
                         <!-- Team Image Start -->
-						<div class="team-image">
+                        <div class="team-image">
                             <a href="team-single.html" data-cursor-text="View">
                                 <figure class="image-anime">
                                     <img src="images/team-1.jpg" alt="">
@@ -526,7 +436,7 @@
                                 <a href="#"><img src="images/arrow-white.svg" alt=""></a>
                             </div>
                             <!-- Team Readmore Button End -->
-						</div>	
+                        </div>
                         <!-- Team Image End -->
 
                         <!-- Team Body Start -->
@@ -537,7 +447,7 @@
                                 <p>co-founder & CEO</p>
                             </div>
                             <!-- Team Content End -->
-                            
+
                             <!-- Team Social List Start -->
                             <div class="team-social-list">
                                 <!-- Team Social Icon Start -->
@@ -553,27 +463,27 @@
                             <!-- Team Social List End -->
                         </div>
                         <!-- Team Body End -->
-					</div>
-					<!-- Team Member Item Start -->
+                    </div>
+                    <!-- Team Member Item Start -->
                 </div>
 
                 <div class="col-lg-4 col-md-6">
                     <!-- Team Member Item Start -->
-					<div class="team-member-item wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="team-member-item wow fadeInUp" data-wow-delay="0.2s">
                         <!-- Team Image Start -->
-						<div class="team-image">
+                        <div class="team-image">
                             <a href="team-single.html" data-cursor-text="View">
                                 <figure class="image-anime">
                                     <img src="images/team-2.jpg" alt="">
                                 </figure>
                             </a>
-                            
+
                             <!-- Team Readmore Button Start -->
                             <div class="team-readmore-btn">
                                 <a href="#"><img src="images/arrow-white.svg" alt=""></a>
                             </div>
                             <!-- Team Readmore Button End -->
-						</div>	
+                        </div>
                         <!-- Team Image End -->
 
                         <!-- Team Body Start -->
@@ -584,7 +494,7 @@
                                 <p>human resoures manager</p>
                             </div>
                             <!-- Team Content End -->
-                            
+
                             <!-- Team Social List Start -->
                             <div class="team-social-list">
                                 <!-- Team Social Icon Start -->
@@ -600,27 +510,27 @@
                             <!-- Team Social List End -->
                         </div>
                         <!-- Team Body End -->
-					</div>
-					<!-- Team Member Item Start -->
+                    </div>
+                    <!-- Team Member Item Start -->
                 </div>
 
                 <div class="col-lg-4 col-md-6">
                     <!-- Team Member Item Start -->
-					<div class="team-member-item wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="team-member-item wow fadeInUp" data-wow-delay="0.4s">
                         <!-- Team Image Start -->
-						<div class="team-image">
+                        <div class="team-image">
                             <a href="team-single.html" data-cursor-text="View">
                                 <figure class="image-anime">
                                     <img src="images/team-3.jpg" alt="">
                                 </figure>
                             </a>
-                            
+
                             <!-- Team Readmore Button Start -->
                             <div class="team-readmore-btn">
                                 <a href="#"><img src="images/arrow-white.svg" alt=""></a>
                             </div>
                             <!-- Team Readmore Button End -->
-						</div>	
+                        </div>
                         <!-- Team Image End -->
 
                         <!-- Team Body Start -->
@@ -631,7 +541,7 @@
                                 <p>civil engineering</p>
                             </div>
                             <!-- Team Content End -->
-                            
+
                             <!-- Team Social List Start -->
                             <div class="team-social-list">
                                 <!-- Team Social Icon Start -->
@@ -647,12 +557,12 @@
                             <!-- Team Social List End -->
                         </div>
                         <!-- Team Body End -->
-					</div>
-					<!-- Team Member Item Start -->
+                    </div>
+                    <!-- Team Member Item Start -->
                 </div>
             </div>
         </div>
-     </div>
+    </div>
     <!-- Our Team Section End -->
 
     <!-- How We Work Start -->
@@ -663,7 +573,8 @@
                     <!-- Section Title Start -->
                     <div class="section-title dark-section">
                         <h3 class="wow fadeInUp">how we work</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">From concept to completion in<span> our work</span></h2>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque">From concept to completion in<span> our
+                                work</span></h2>
                     </div>
                     <!-- Section Title End -->
                 </div>
@@ -671,7 +582,8 @@
                 <div class="col-lg-6">
                     <!-- Section Title Content Start -->
                     <div class="section-title-content dark-section">
-                        <p class="wow fadeInUp" data-wow-delay="0.2s">Our comprehensive approach guides you through each phase of the design process, from initial brainstorming and conceptualization.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">Our comprehensive approach guides you through each
+                            phase of the design process, from initial brainstorming and conceptualization.</p>
                     </div>
                     <!-- Section Title Content End -->
                 </div>
@@ -700,7 +612,8 @@
                             </div>
                             <div class="how-we-work-content">
                                 <h3>02. design planning</h3>
-                                <p>This involves selecting materials, and layouts, furnishings, as well as creating 3D renderings.</p>
+                                <p>This involves selecting materials, and layouts, furnishings, as well as creating 3D
+                                    renderings.</p>
                             </div>
                         </div>
                         <!-- How We Item End -->
@@ -712,7 +625,8 @@
                             </div>
                             <div class="how-we-work-content">
                                 <h3>03. project execution</h3>
-                                <p>With the design plans in this place, we manage and coordinate all aspects of the projects.</p>
+                                <p>With the design plans in this place, we manage and coordinate all aspects of the
+                                    projects.</p>
                             </div>
                         </div>
                         <!-- How We Item End -->
@@ -724,7 +638,8 @@
                             </div>
                             <div class="how-we-work-content">
                                 <h3>04. final review</h3>
-                                <p>After completing project we conduct a thorough walkthrough with you to review the space.</p>
+                                <p>After completing project we conduct a thorough walkthrough with you to review the space.
+                                </p>
                             </div>
                         </div>
                         <!-- How We Item End -->
@@ -758,7 +673,7 @@
                                     </div>
                                 </div>
                                 <!-- Company Support Logo End -->
-                                
+
                                 <!-- Company Support Logo Start -->
                                 <div class="swiper-slide">
                                     <div class="company-logo">
@@ -766,7 +681,7 @@
                                     </div>
                                 </div>
                                 <!-- Company Support Logo End -->
-                                
+
                                 <!-- Company Support Logo Start -->
                                 <div class="swiper-slide">
                                     <div class="company-logo">
@@ -774,7 +689,7 @@
                                     </div>
                                 </div>
                                 <!-- Company Support Logo End -->
-                                
+
                                 <!-- Company Support Logo Start -->
                                 <div class="swiper-slide">
                                     <div class="company-logo">
@@ -802,8 +717,10 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">asked question</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Have your any question look <span>here now</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">Nostra turma dedicata consilium arctius operatur ut visionem tuam intelligat et eam ad vitam adducat cum magna cura in singula</p>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">Have your any question look <span>here
+                                    now</span></h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">Nostra turma dedicata consilium arctius operatur
+                                ut visionem tuam intelligat et eam ad vitam adducat cum magna cura in singula</p>
                         </div>
                         <!-- Section Title End -->
 
@@ -812,13 +729,17 @@
                             <!-- FAQ Item Start -->
                             <div class="accordion-item wow fadeInUp">
                                 <h2 class="accordion-header" id="heading1">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                        <span>1.</span>  What is the typical process for starting a design project?
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                        <span>1.</span> What is the typical process for starting a design project?
                                     </button>
                                 </h2>
-                                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordion">
+                                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
+                                    data-bs-parent="#accordion">
                                     <div class="accordion-body">
-                                        <p>Our process starts with a consultation to discuss your vision, followed by planning, design presentation, and implementation to achieve your ideal space.</p>
+                                        <p>Our process starts with a consultation to discuss your vision, followed by
+                                            planning, design presentation, and implementation to achieve your ideal space.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -827,13 +748,17 @@
                             <!-- FAQ Item Start -->
                             <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
                                 <h2 class="accordion-header" id="heading2">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                        <span>2.</span>  How long does a typical interior design project take?
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                        <span>2.</span> How long does a typical interior design project take?
                                     </button>
                                 </h2>
-                                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordion">
+                                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                                    data-bs-parent="#accordion">
                                     <div class="accordion-body">
-                                        <p>Our process starts with a consultation to discuss your vision, followed by planning, design presentation, and implementation to achieve your ideal space.</p>
+                                        <p>Our process starts with a consultation to discuss your vision, followed by
+                                            planning, design presentation, and implementation to achieve your ideal space.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -842,13 +767,17 @@
                             <!-- FAQ Item Start -->
                             <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
                                 <h2 class="accordion-header" id="heading3">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                        <span>3.</span>  Can I incorporate my existing furniture into the new design?
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                        <span>3.</span> Can I incorporate my existing furniture into the new design?
                                     </button>
                                 </h2>
-                                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordion">
+                                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                                    data-bs-parent="#accordion">
                                     <div class="accordion-body">
-                                        <p>Our process starts with a consultation to discuss your vision, followed by planning, design presentation, and implementation to achieve your ideal space.</p>
+                                        <p>Our process starts with a consultation to discuss your vision, followed by
+                                            planning, design presentation, and implementation to achieve your ideal space.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -857,13 +786,17 @@
                             <!-- FAQ Item Start -->
                             <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
                                 <h2 class="accordion-header" id="heading4">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                        <span>4.</span>  What should I expect during the design consultation?
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                        <span>4.</span> What should I expect during the design consultation?
                                     </button>
                                 </h2>
-                                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordion">
+                                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                                    data-bs-parent="#accordion">
                                     <div class="accordion-body">
-                                        <p>Our process starts with a consultation to discuss your vision, followed by planning, design presentation, and implementation to achieve your ideal space.</p>
+                                        <p>Our process starts with a consultation to discuss your vision, followed by
+                                            planning, design presentation, and implementation to achieve your ideal space.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -885,11 +818,11 @@
                 </div>
             </div>
         </div>
-     </div>
+    </div>
     <!-- Our Faqs End -->
 
     <!-- Our Clients Start -->
-     <div class="our-clients">
+    <div class="our-clients">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -897,8 +830,12 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">our clients</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Transforming 1,000+ spaces with tailored designs</h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">We've had the privilege of designing and transforming over a thousand interiors, creating spaces that truly resonate with our clients' visions and needs. Our approach focuses on blending aesthetics and functionality, ensuring each project brings comfort, elegance, and a personalized touch.</p>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">Transforming 1,000+ spaces with tailored
+                                designs</h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">We've had the privilege of designing and
+                                transforming over a thousand interiors, creating spaces that truly resonate with our
+                                clients' visions and needs. Our approach focuses on blending aesthetics and functionality,
+                                ensuring each project brings comfort, elegance, and a personalized touch.</p>
                         </div>
                         <!-- Section Title End -->
 
@@ -929,7 +866,7 @@
                                         </div>
                                     </div>
                                     <!-- Client Logo End -->
-                                    
+
                                     <!-- Client Logo Start -->
                                     <div class="swiper-slide">
                                         <div class="client-logo">
@@ -937,7 +874,7 @@
                                         </div>
                                     </div>
                                     <!-- Client Logo End -->
-                                    
+
                                     <!-- Client Logo Start -->
                                     <div class="swiper-slide">
                                         <div class="client-logo">
@@ -953,183 +890,7 @@
                 </div>
             </div>
         </div>
-     </div>
-    <!-- Our Clients End -->
-
-    <!-- Footer Start -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- Footer Header Start -->
-                    <div class="footer-header">
-                        <div class="row align-items-center">  
-                            <div class="col-md-6">
-                                <!-- Footer Logo Start -->
-                                <div class="footer-logo">
-                                    <img src="images/footer-logo.svg" alt="">
-                                </div>
-                                <!-- Footer Logo End -->
-                            </div>
-
-                            <div class="col-md-6">
-                                <!-- Footer Social Link Start -->
-                                <div class="footer-social-links">
-                                    <div class="footer-social-link-title">
-                                        <h3>follow our socials</h3>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-dribbble"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    </ul>
-                                </div>
-                                <!-- Footer Social Link End -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Footer Header End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Footer Links Start -->
-                     <div class="footer-links">
-                        <h3>information</h3>
-                        <ul>
-                            <li><a href="about.html">about our company</a></li>
-                            <li><a href="services.html">view our service</a></li>
-                            <li><a href="#">careers at company</a></li>
-                            <li><a href="blog.html">read our blog</a></li>
-                            <li><a href="projects.html">our latest projects</a></li>
-                        </ul>
-                     </div>
-                    <!-- Footer Links End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Footer Links Start -->
-                     <div class="footer-links">
-                        <h3>portfolio</h3>
-                        <ul>
-                            <li><a href="project-single.html">luxury home design</a></li>
-                            <li><a href="project-single.html">residential interior design</a></li>
-                            <li><a href="project-single.html">commercial space design</a></li>
-                            <li><a href="project-single.html">residential interior design</a></li>
-                            <li><a href="project-single.html">renovation and restoration design</a></li>
-                        </ul>
-                     </div>
-                    <!-- Footer Links End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Footer Contact Box Start -->
-                    <div class="footer-contact-box footer-links">
-                        <h3>contact us</h3>
-                        <!-- Footer Contact Item Start -->
-                        <div class="footer-contact-item">
-                            <div class="icon-box">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div class="footer-contact-content">
-                                <p>+1 (213) 465 789</p>
-                            </div>
-                        </div>
-                        <!-- Footer Contact Item End -->
-
-                        <!-- Footer Contact Item Start -->
-                        <div class="footer-contact-item">
-                            <div class="icon-box">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <div class="footer-contact-content">
-                                <p>info@domain.com</p>
-                            </div>
-                        </div>
-                        <!-- Footer Contact Item End -->
-
-                        <!-- Footer Contact Item Start -->
-                        <div class="footer-contact-item">
-                            <div class="icon-box">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div class="footer-contact-content">
-                                <p>Generała Ziętka Jerzego 54, Mysłowice 41-412</p>
-                            </div>
-                        </div>
-                        <!-- Footer Contact Item End -->
-                    </div>
-                    <!-- Footer Contact Box End -->
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <!-- Footer Newsletter Form Start -->
-                    <div class="footer-latest-news footer-links">
-                        <h3>get the latest trending news</h3>
-                        
-                        <div class="footer-newsletter-form">
-                            <p>Your Dream Space Starts Here Get Exclusive Design Straight Your Inbox!</p>
-
-                            <form id="newslettersForm" action="#" method="POST">
-                                <div class="form-group">
-                                    <input type="email" name="email" class="form-control"  id="mail" placeholder="Enter your email" required>
-                                    <button type="submit"><i class="fa-solid fa-arrow-right-long"></i> </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- Footer Newsletter Form End -->
-                </div>
-            </div>
-
-            <!-- Footer Copyright Section Start -->
-            <div class="footer-copyright">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Footer Copyright Start -->
-                        <div class="footer-copyright-text">
-                            <p>Copyright © 2024 All Rights Reserved.</p>
-                        </div>
-                        <!-- Footer Copyright End -->
-                    </div>
-                </div>
-            </div>
-            <!-- Footer Copyright Section End -->
-        </div>
-    </footer>
-    <!-- Footer End -->
-
-    <!-- Jquery Library File -->
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <!-- Bootstrap js file -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Validator js file -->
-    <script src="js/validator.min.js"></script>
-    <!-- SlickNav js file -->
-    <script src="js/jquery.slicknav.js"></script>
-    <!-- Swiper js file -->
-    <script src="js/swiper-bundle.min.js"></script>
-    <!-- Counter js file -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <!-- Isotop js file -->
-	<script src="js/isotope.min.js"></script>
-    <!-- Magnific js file -->
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <!-- SmoothScroll -->
-    <script src="js/SmoothScroll.js"></script>
-    <!-- Parallax js -->
-    <script src="js/parallaxie.js"></script>
-    <!-- MagicCursor js file -->
-    <script src="js/gsap.min.js"></script>
-    <script src="js/magiccursor.js"></script>
-    <!-- Text Effect js file -->
-    <script src="js/SplitText.js"></script>
-    <script src="js/ScrollTrigger.min.js"></script>
-    <!-- YTPlayer js File -->
-    <script src="js/jquery.mb.YTPlayer.min.js"></script>
-    <!-- Wow js file -->
-    <script src="js/wow.min.js"></script>
-    <!-- Main Custom js file -->
-    <script src="js/function.js"></script>
-</body>
-</html>
+    </div>
+@endsection
+@section('script')
+@endsection

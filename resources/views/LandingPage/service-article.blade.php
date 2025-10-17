@@ -40,33 +40,28 @@
                         <!-- Service Feature Image Start -->
                         <div class="service-feature-image">
                             <figure class="image-anime reveal">
-                                <img src="images/service-1.jpg" alt="">
+                                <img src="{{ asset('storage/' . $serviceItems->image) }}" alt="">
                             </figure>
                         </div>
                         <!-- Service Feature Image End -->
 
                         <!-- Secvice Entry Start -->
                         <div class="service-entry">
-                            <p class="wow fadeInUp">Our interior design services are crafted to transform spaces
-                                through thoughtful planning, custom furniture, and tailored layouts. We believe that
-                                every room should have an efficient flow and a balanced design, so our space planning
-                                and layout services aim to optimize each area to fit seamlessly with your lifestyle.
-                                With custom furniture design, we create unique pieces that not only enhance the space
-                                but reflect your personal style.</p>
+                            <p class="wow fadeInUp">{{ $serviceItems->description }}</p>
 
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">Our offerings also include expert color and
+                            {{-- <p class="wow fadeInUp" data-wow-delay="0.2s">Our offerings also include expert color and
                                 material selection, lighting solutions to enhance mood, and soft furnishings to add
                                 warmth. From home renovations that revitalize interiors to storage solutions that bring
                                 both style and organization, we cover all aspects of interior enhancement. Using 3D
                                 visualization, we ensure clients can envision their transformed space, making the design
-                                process both transparent and collaborative.</p>
+                                process both transparent and collaborative.</p> --}}
 
                             <!-- Service Entry List Image Start -->
                             <div class="service-entry-list-image">
                                 <!-- Service Entry Image Start -->
                                 <div class="service-entry-image">
                                     <figure class="image-anime reveal">
-                                        <img src="images/service-entry-img.jpg" alt="">
+                                        <img src="{{ asset('storage/' . $serviceItems->image_2) }}" alt="">
                                     </figure>
                                 </div>
                                 <!-- Service Entry Image End -->

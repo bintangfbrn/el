@@ -21,6 +21,7 @@ Route::middleware('guest')->group(function () {
 
 Route::prefix('/page')->name('landing-page.')->group(function () {
     Route::get('/services', [LandingPageController::class, 'index_services'])->name('index_services');
+    Route::get('/services_items/{id}', [LandingPageController::class, 'services_items'])->name('services_items');
 });
 
 Route::get('/dashboard', function () {

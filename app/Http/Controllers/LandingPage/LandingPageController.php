@@ -22,7 +22,8 @@ class LandingPageController extends Controller
 
     public function services_items(Request $request, $id)
     {
+        $id = decrypt($id);
         $serviceItems = Service::where('id', $id)->first();
-        return view('LandingPage.services', compact('serviceItems'));
+        return view('LandingPage.service-article', compact('serviceItems'));
     }
 }

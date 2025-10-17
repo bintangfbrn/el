@@ -73,7 +73,8 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a>
-                                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                                <li class="nav-item"><a class="nav-link"
+                                        href="{{ route('landing-page.index_services') }}">Services</a></li>
                                 <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
                                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                                 <li class="nav-item submenu"><a class="nav-link" href="#">Pages</a>

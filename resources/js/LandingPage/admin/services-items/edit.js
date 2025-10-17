@@ -2,15 +2,10 @@
 
 $(document).ready(function () {
 
-    // Inisialisasi select2 jika digunakan
-    $('#pin, #status').select2({
+    $('select[name="pin"], select[name="status"]').select2({
         width: '100%'
     });
 
-    // Sembunyikan tombol loading di awal
-    $('#btn_loading').hide();
-
-    // Saat form disubmit
     $('form').on('submit', function (e) {
         e.preventDefault();
 
@@ -83,8 +78,4 @@ $(document).ready(function () {
         });
     });
 
-    // Mencegah submit ganda
-    $('.from-prevent-multiple-submits').on('submit', function () {
-        $(this).find(':submit').prop('disabled', true);
-    });
 });

@@ -18,7 +18,8 @@
                         <div class="service-item wow fadeInUp">
 
                             <div class="service-image">
-                                <a href="{{ url('service-single/' . $service->slug) }}" data-cursor-text="View">
+                                <a href="{{ route('landing-page.services_items', encrypt($service->id)) }}"
+                                    data-cursor-text="View">
                                     <figure class="image-anime">
                                         {{-- Jika gambar disimpan di storage --}}
                                         <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}">
@@ -27,18 +28,18 @@
                             </div>
 
                             <div class="service-btn">
-                                <a href="{{ url('service-single/' . $service->slug) }}">
+                                <a href="{{ route('landing-page.services_items', encrypt($service->id)) }}">
                                     <img src="{{ asset('assets/landing-pages/images/arrow-white.svg') }}" alt="">
                                 </a>
                             </div>
 
                             <div class="service-content">
                                 <h3>
-                                    <a href="{{ url('service-single/' . $service->slug) }}">
+                                    <a href="{{ route('landing-page.services_items', encrypt($service->id)) }}">
                                         {{ $service->title }}
                                     </a>
                                 </h3>
-                                <p>{{ $service->description }}</p>
+                                <p>{{ $service->short_description }}</p>
                             </div>
 
                         </div>

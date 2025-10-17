@@ -284,7 +284,11 @@ class ServiceController extends Controller
 
             return redirect()
                 ->route('services-items')
-                ->with('success', 'Artikel berhasil disimpan!');
+                ->with('swal', [
+                    'icon' => 'success',
+                    'title' => 'Berhasil!',
+                    'text' => 'Artikel berhasil disimpan!'
+                ]);
         } catch (Exception $e) {
             Log::error('Gagal menyimpan artikel service: ' . $e->getMessage());
             if (!empty($imagePath) && File::exists(public_path('storage/' . $imagePath))) {
@@ -297,7 +301,11 @@ class ServiceController extends Controller
             return redirect()
                 ->back()
                 ->withInput()
-                ->with('error', 'Terjadi kesalahan saat menyimpan data. Silakan coba lagi.');
+                ->with('swal', [
+                    'icon' => 'error',
+                    'title' => 'Gagal!',
+                    'text' => 'Terjadi kesalahan saat menyimpan data. Silakan coba lagi.'
+                ]);
         }
     }
 
@@ -355,41 +363,54 @@ class ServiceController extends Controller
 
             $destination = public_path('storage/services');
 
+            // Buat folder jika belum ada
+            if (!file_exists($destination)) {
+                mkdir($destination, 0755, true);
+            }
+
             // Gambar utama
             if ($request->hasFile('image')) {
-                if ($service->image && file_exists(public_path('storage/' . $service->image))) {
-                    unlink(public_path('storage/' . $service->image));
+                $oldImagePath = public_path('storage/' . $service->image);
+                if ($service->image && file_exists($oldImagePath)) {
+                    @unlink($oldImagePath);
                 }
 
                 $fileName = time() . '_1.' . $request->image->getClientOriginalExtension();
                 $request->image->move($destination, $fileName);
 
-                // Simpan path relatif
-                $imagePath = 'services/' . $fileName;
-                $service->image = $imagePath;
+                $service->image = 'services/' . $fileName;
             }
 
             // Gambar kedua
             if ($request->hasFile('image_2')) {
-                if ($service->image_2 && file_exists(public_path('storage/' . $service->image_2))) {
-                    unlink(public_path('storage/' . $service->image_2));
+                $oldImagePath2 = public_path('storage/' . $service->image_2);
+                if ($service->image_2 && file_exists($oldImagePath2)) {
+                    @unlink($oldImagePath2);
                 }
 
                 $fileName2 = time() . '_2.' . $request->image_2->getClientOriginalExtension();
                 $request->image_2->move($destination, $fileName2);
 
-                // Simpan path relatif (sesuai permintaanmu)
-                $imagePath2 = 'services/' . $fileName2;
-                $service->image_2 = $imagePath2;
+                $service->image_2 = 'services/' . $fileName2;
             }
 
             $service->save();
 
             return redirect()
                 ->route('services-items')
-                ->with('success', 'Data berhasil diperbarui.');
+                ->with('swal', [
+                    'icon' => 'success',
+                    'title' => 'Berhasil!',
+                    'text' => 'Data berhasil diperbarui!'
+                ]);
         } catch (\Exception $e) {
-            return back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+            return back()
+                ->withInput()
+                ->with('swal', [
+                    'icon' => 'error',
+                    'title' => 'Gagal!',
+                    'text' => 'Terjadi kesalahan: ' . $e->getMessage(),
+                ]);
         }
     }
 }

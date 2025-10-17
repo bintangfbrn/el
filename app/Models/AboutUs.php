@@ -21,6 +21,7 @@ class AboutUs extends Model
         'email',
         'website',
         'image',
+        'image_2',
         'status',
     ];
 

@@ -36,7 +36,6 @@ class AboutUsController extends Controller
     {
         PermissionChecking(['view_aboutus', 'create_aboutus', 'edit_aboutus', 'delete_aboutus']);
         // dd($request->all());
-
         if ($request->ajax()) {
             $perusahaan = AboutUs::orderBy('created_at', 'desc')->get();
             // dd($perusahaan);
@@ -68,9 +67,88 @@ class AboutUsController extends Controller
                 ->make(true);
         } else {
             $title = 'Perusahaan';
-            $serviceItems = AboutUs::orderBy('created_at', 'desc')->get();
+            $about = AboutUs::orderBy('created_at', 'desc')->first();
+            // dd($about);
+            return view('LandingPage.admin.aboutus.perusahaan.index', compact('title', 'about'));
+        }
+    }
 
-            return view('LandingPage.admin.aboutus.perusahaan.index', compact('title', 'serviceItems'));
+    public function perusahaanStore(Request $request)
+    {
+        PermissionChecking(['view_aboutus', 'create_aboutus']);
+
+        try {
+
+            $about = AboutUs::first();
+            // dd($about);
+            // === PASTIKAN FOLDER TUJUAN ADA ===
+            $destination = public_path('storage/aboutus');
+            if (!File::exists($destination)) {
+                File::makeDirectory($destination, 0755, true);
+            }
+
+            // === HANDLE GAMBAR PERTAMA ===
+            $imagePath = $about->image ?? null;
+            if ($request->hasFile('image')) {
+                // Hapus gambar lama
+                if ($about && $about->image && File::exists(public_path('storage/' . $about->image))) {
+                    File::delete(public_path('storage/' . $about->image));
+                }
+
+                $file = $request->file('image');
+                $fileName = time() . '_1_' . $file->getClientOriginalName();
+                $file->move($destination, $fileName);
+                $imagePath = 'aboutus/' . $fileName;
+            }
+
+            // === HANDLE GAMBAR KEDUA ===
+            $imagePath2 = $about->image_2 ?? null;
+            if ($request->hasFile('image_2')) {
+                // Hapus gambar lama
+                if ($about && $about->image_2 && File::exists(public_path('storage/' . $about->image_2))) {
+                    File::delete(public_path('storage/' . $about->image_2));
+                }
+
+                $file2 = $request->file('image_2');
+                $fileName2 = time() . '_2_' . $file2->getClientOriginalName();
+                $file2->move($destination, $fileName2);
+                $imagePath2 = 'aboutus/' . $fileName2;
+            }
+
+            // === SIMPAN / UPDATE DENGAN updateOrCreate ===
+            AboutUs::updateOrCreate(
+                ['id' => $about->id ?? null],
+                [
+                    'company_name' => $request->company_name,
+                    'tagline' => $request->tagline,
+                    'description' => $request->description,
+                    'founded_year' => $request->founded_year,
+                    'address' => $request->address,
+                    'phone' => $request->phone,
+                    'email' => $request->email,
+                    'website' => $request->website,
+                    'image' => $imagePath,
+                    'image_2' => $imagePath2,
+                    'status' => $request->status,
+                ]
+            );
+
+            return redirect()->back()->with([
+                'swal' => [
+                    'icon' => 'success',
+                    'title' => 'Success!',
+                    'text' => $about ? 'Data updated successfully!' : 'Data created successfully!',
+                ],
+            ]);
+        } catch (\Exception $e) {
+            Log::error('AboutUs storeOrUpdate error: ' . $e->getMessage());
+            return redirect()->back()->withInput()->with([
+                'swal' => [
+                    'icon' => 'error',
+                    'title' => 'Error!',
+                    'text' => 'An unexpected error occurred while saving data.',
+                ],
+            ]);
         }
     }
 }

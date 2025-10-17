@@ -55,6 +55,8 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('/about')->name('about.')->group(function () {
         Route::get('/AboutPerusahaan', [AboutUsController::class, 'AboutPerusahaan'])->name('Perusahaan'); //perusahaan
+        Route::post('/AboutPerusahaan/store', [AboutUsController::class, 'perusahaanStore'])->name('Perusahaan.store');
+        //perusahaan
         Route::get('/AboutBestSelling', [AboutUsController::class, 'AboutBestSelling'])->name('AboutBestSelling');
         Route::get('/AboutClient', [AboutUsController::class, 'AboutClient'])->name('AboutClient');
         Route::get('/AboutFaq', [AboutUsController::class, 'AboutFaq'])->name('AboutFaq');

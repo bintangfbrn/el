@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email', 100)->nullable();
             $table->string('website')->nullable();
             $table->string('image')->nullable();
+            $table->string('image_2')->nullable();
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });

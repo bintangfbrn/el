@@ -125,7 +125,8 @@
          </li>
          <li class="menu-item @if (request()->routeIs('service.*') ||
                  request()->routeIs('services-items') ||
-                 request()->routeIs('create-services-items')) active open @endif">
+                 request()->routeIs('create-services-items') ||
+                 request()->routeIs('about.*')) active open @endif">
              <a href="javascript:void(0);" class="menu-link menu-toggle">
                  <i class="menu-icon tf-icons bx bx-cart-alt"></i>
                  {{-- <i class="menu-icon tf-icons bx bx-food-menu"></i> --}}
@@ -144,6 +145,64 @@
                      <a href="{{ route('services-items') }}" class="menu-link">
                          <div data-i18n="Service Items">Service Items</div>
                      </a>
+                 </li>
+             </ul>
+             <ul class="menu-sub">
+                 <li class="menu-item @if (request()->routeIs('about.*')) active open @endif">
+                     <a href="javascript:void(0);" class="menu-link menu-toggle">
+                         <div data-i18n="About Us">About Us</div>
+                     </a>
+                     <ul class="menu-sub">
+                         <li class="menu-item @if (request()->routeIs('about.Perusahaan')) active @endif">
+                             <a href="{{ route('about.Perusahaan') }}" id="side-pem-sidangta" class="menu-link">
+                                 <div>Perusahaan</div>
+                             </a>
+                         </li>
+                         <li class="menu-item @if (request()->routeIs('about.AboutBestSelling')) active @endif">
+                             <a href="{{ route('about.AboutBestSelling') }}" id="side-bimbingan" class="menu-link">
+                                 <div>Best Selling</div>
+                             </a>
+                         </li>
+                         <li class="menu-item @if (request()->routeIs('about.AboutClient')) active @endif">
+                             <a href="{{ route('about.AboutClient') }}" id="side-pem-sempro" class="menu-link">
+                                 <div>Client</div>
+                             </a>
+                         </li>
+                         <li class="menu-item @if (request()->routeIs('about.AboutFaq')) active @endif">
+                             <a href="{{ route('about.AboutFaq') }}" id="side-pem-semta" class="menu-link">
+                                 <div>Faq</div>
+                             </a>
+                         </li>
+                         <li class="menu-item @if (request()->routeIs('about.AboutHowWeWork')) active @endif">
+                             <a href="{{ route('about.AboutHowWeWork') }}" id="side-pem-sidangta" class="menu-link">
+                                 <div>Work</div>
+                             </a>
+                         </li>
+                         <li class="menu-item @if (request()->routeIs('about.AboutPage')) active @endif">
+                             <a href="{{ route('about.AboutPage') }}" id="side-pem-sidangta" class="menu-link">
+                                 <div>Page</div>
+                             </a>
+                         </li>
+                         <li class="menu-item @if (request()->routeIs('about.AboutTeam')) active @endif">
+                             <a href="{{ route('about.AboutTeam') }}" id="side-pem-sidangta" class="menu-link">
+                                 <div>Team</div>
+                             </a>
+                         </li>
+                         <li class="menu-item @if (request()->routeIs('about.AboutTestimonial')) active @endif">
+                             <a href="{{ route('about.AboutTestimonial') }}" id="side-pem-sidangta"
+                                 class="menu-link">
+                                 <div>Testimonial</div>
+                             </a>
+                         </li>
+
+                         <li class="menu-item @if (request()->routeIs('about.AboutVisionMission')) active @endif">
+                             <a href="{{ route('about.AboutVisionMission') }}" id="side-pem-sidangta"
+                                 class="menu-link">
+                                 <div>Visi Misi</div>
+                             </a>
+                         </li>
+
+                     </ul>
                  </li>
              </ul>
          </li>

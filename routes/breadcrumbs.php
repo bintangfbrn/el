@@ -57,3 +57,14 @@ Breadcrumbs::for('edit-services-items', function ($trail, $id) {
     $trail->parent('services-items');
     $trail->push('Edit Service Items', route('edit-services-items', $id));
 });
+
+Breadcrumbs::for('about.Perusahaan', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push('Perusahaan', route('about.Perusahaan'));
+});
+
+
+// Breadcrumbs::for('about.AboutPerusahaan', function ($trail) {
+//     $trail->parent('about.AboutPerusahaan');
+//     $trail->push('Perusahaan', route('about.AboutPerusahaan'));
+// });

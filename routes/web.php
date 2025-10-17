@@ -5,10 +5,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DesignController;
 use App\Http\Controllers\LandingPage\LandingPageController;
 use App\Http\Controllers\LandingPage\ServiceController;
+use App\Http\Controllers\LandingPage\AboutUsController;
 use App\Http\Controllers\UserManajemen\PermissionController;
 use App\Http\Controllers\UserManajemen\RoleController;
 use App\Http\Controllers\UserManajemen\UserController;
 use Illuminate\Support\Facades\Route;
+
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthenticatedSessionController::class, 'create'])
@@ -49,6 +51,19 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
+
+
+    Route::prefix('/about')->name('about.')->group(function () {
+        Route::get('/AboutPerusahaan', [AboutUsController::class, 'AboutPerusahaan'])->name('Perusahaan'); //perusahaan
+        Route::get('/AboutBestSelling', [AboutUsController::class, 'AboutBestSelling'])->name('AboutBestSelling');
+        Route::get('/AboutClient', [AboutUsController::class, 'AboutClient'])->name('AboutClient');
+        Route::get('/AboutFaq', [AboutUsController::class, 'AboutFaq'])->name('AboutFaq');
+        Route::get('/AboutHowWeWork', [AboutUsController::class, 'AboutHowWeWork'])->name('AboutHowWeWork');
+        Route::get('/AboutPage', [AboutUsController::class, 'AboutPage'])->name('AboutPage');
+        Route::get('/AboutTeam', [AboutUsController::class, 'AboutTeam'])->name('AboutTeam');
+        Route::get('/AboutTestimonial', [AboutUsController::class, 'AboutTestimonial'])->name('AboutTestimonial');
+        Route::get('/AboutVisionMission', [AboutUsController::class, 'AboutVisionMission'])->name('AboutVisionMission');
+    });
 });
 
 require __DIR__ . '/auth.php';

@@ -158,26 +158,7 @@
                                  <div>Perusahaan</div>
                              </a>
                          </li>
-                         <li class="menu-item @if (request()->routeIs('about.AboutBestSelling')) active @endif">
-                             <a href="{{ route('about.AboutBestSelling') }}" id="side-bimbingan" class="menu-link">
-                                 <div>Best Selling</div>
-                             </a>
-                         </li>
-                         <li class="menu-item @if (request()->routeIs('about.AboutClient')) active @endif">
-                             <a href="{{ route('about.AboutClient') }}" id="side-pem-sempro" class="menu-link">
-                                 <div>Client</div>
-                             </a>
-                         </li>
-                         <li class="menu-item @if (request()->routeIs('about.AboutFaq')) active @endif">
-                             <a href="{{ route('about.AboutFaq') }}" id="side-pem-semta" class="menu-link">
-                                 <div>Faq</div>
-                             </a>
-                         </li>
-                         <li class="menu-item @if (request()->routeIs('about.AboutHowWeWork')) active @endif">
-                             <a href="{{ route('about.AboutHowWeWork') }}" id="side-pem-sidangta" class="menu-link">
-                                 <div>Work</div>
-                             </a>
-                         </li>
+
                          <li class="menu-item @if (request()->routeIs('about.AboutPage')) active @endif">
                              <a href="{{ route('about.AboutPage') }}" id="side-pem-sidangta" class="menu-link">
                                  <div>Page</div>
@@ -188,12 +169,7 @@
                                  <div>Team</div>
                              </a>
                          </li>
-                         <li class="menu-item @if (request()->routeIs('about.AboutTestimonial')) active @endif">
-                             <a href="{{ route('about.AboutTestimonial') }}" id="side-pem-sidangta"
-                                 class="menu-link">
-                                 <div>Testimonial</div>
-                             </a>
-                         </li>
+
 
                          <li class="menu-item @if (request()->routeIs('about.AboutVisionMission')) active @endif">
                              <a href="{{ route('about.AboutVisionMission') }}" id="side-pem-sidangta"
@@ -203,6 +179,32 @@
                          </li>
 
                      </ul>
+
+                 </li>
+                 <li class="menu-item @if (request()->routeIs('about.AboutBestSelling')) active @endif">
+                     <a href="{{ route('about.AboutBestSelling') }}" id="side-bimbingan" class="menu-link">
+                         <div>Best Selling</div>
+                     </a>
+                 </li>
+                 <li class="menu-item @if (request()->routeIs('about.AboutClient')) active @endif">
+                     <a href="{{ route('about.AboutClient') }}" id="side-pem-sempro" class="menu-link">
+                         <div>Client</div>
+                     </a>
+                 </li>
+                 <li class="menu-item @if (request()->routeIs('about.AboutFaq')) active @endif">
+                     <a href="{{ route('about.AboutFaq') }}" id="side-pem-semta" class="menu-link">
+                         <div>Faq</div>
+                     </a>
+                 </li>
+                 <li class="menu-item @if (request()->routeIs('about.AboutHowWeWork')) active @endif">
+                     <a href="{{ route('about.AboutHowWeWork') }}" id="side-pem-sidangta" class="menu-link">
+                         <div>Work</div>
+                     </a>
+                 </li>
+                 <li class="menu-item @if (request()->routeIs('about.AboutTestimonial')) active @endif">
+                     <a href="{{ route('about.AboutTestimonial') }}" id="side-pem-sidangta" class="menu-link">
+                         <div>Testimonial</div>
+                     </a>
                  </li>
              </ul>
          </li>

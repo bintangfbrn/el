@@ -8,12 +8,12 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('about_how_we_work', function (Blueprint $table) {
+        Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->foreignId('about_id')->constrained('about_us')->onDelete('cascade');
-            $table->string('title');
-            $table->text('description')->nullable();
-            $table->string('icon')->nullable();
+            $table->string('client_name');
+            $table->string('logo')->nullable();
+            $table->string('website')->nullable();
             $table->integer('order')->default(0);
             $table->timestamps();
         });
@@ -21,6 +21,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('about_how_we_work');
+        Schema::dropIfExists('clients');
     }
 };

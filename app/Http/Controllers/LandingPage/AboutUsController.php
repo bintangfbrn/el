@@ -21,11 +21,11 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
-use App\Models\AboutVisionMission;
+use App\Models\VisionMission;
 use App\Models\AboutClient;
 use App\Models\AboutFaq;
 use App\Models\AboutHowWeWork;
-use App\Models\AboutTeam;
+use App\Models\Team;
 use App\Models\AboutTestimonial;
 use App\Models\AboutBestSelling;
 use App\Models\AboutPage;

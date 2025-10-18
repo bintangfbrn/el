@@ -5,16 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AboutVisionMission extends Model
+class HowWeWork extends Model
 {
     use HasFactory;
 
-    protected $table = 'about_vision_mission';
+    protected $table = 'how_we_work';
 
     protected $fillable = [
         'about_id',
-        'vision',
-        'mission',
+        'title',
+        'description',
+        'icon',
+        'order',
     ];
 
     public function about()

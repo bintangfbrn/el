@@ -8,12 +8,14 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('about_clients', function (Blueprint $table) {
+        Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
             $table->foreignId('about_id')->constrained('about_us')->onDelete('cascade');
-            $table->string('client_name');
-            $table->string('logo')->nullable();
-            $table->string('website')->nullable();
+            $table->string('name');
+            $table->string('company')->nullable();
+            $table->text('message');
+            $table->string('photo')->nullable();
+            $table->tinyInteger('rating')->default(5);
             $table->integer('order')->default(0);
             $table->timestamps();
         });
@@ -21,6 +23,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('about_clients');
+        Schema::dropIfExists('testimonials');
     }
 };

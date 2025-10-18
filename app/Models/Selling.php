@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AboutTestimonial extends Model
+class Selling extends Model
 {
     use HasFactory;
 
-    protected $table = 'about_testimonials';
+    protected $table = 'selling';
 
     protected $fillable = [
         'about_id',
-        'name',
-        'company',
-        'message',
-        'photo',
-        'rating',
+        'title',
+        'description',
+        'image',
+        'price',
+        'link',
         'order',
     ];
 

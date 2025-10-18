@@ -5,17 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AboutHowWeWork extends Model
+class AboutFaq extends Model
 {
     use HasFactory;
 
-    protected $table = 'about_how_we_work';
+    protected $table = 'faqs';
 
     protected $fillable = [
         'about_id',
-        'title',
-        'description',
-        'icon',
+        'question',
+        'answer',
         'order',
     ];
 

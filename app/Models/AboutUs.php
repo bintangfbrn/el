@@ -27,12 +27,12 @@ class AboutUs extends Model
 
     public function visionMission()
     {
-        return $this->hasOne(AboutVisionMission::class, 'about_id');
+        return $this->hasOne(VisionMission::class, 'about_id');
     }
 
     public function clients()
     {
-        return $this->hasMany(AboutClient::class, 'about_id');
+        return $this->hasMany(Client::class, 'about_id');
     }
 
     public function faqs()
@@ -42,22 +42,22 @@ class AboutUs extends Model
 
     public function howWeWork()
     {
-        return $this->hasMany(AboutHowWeWork::class, 'about_id');
+        return $this->hasMany(HowWeWork::class, 'about_id');
     }
 
     public function team()
     {
-        return $this->hasMany(AboutTeam::class, 'about_id');
+        return $this->hasMany(Team::class, 'about_id');
     }
 
     public function testimonials()
     {
-        return $this->hasMany(AboutTestimonial::class, 'about_id');
+        return $this->hasMany(Testimonial::class, 'about_id');
     }
 
     public function bestSelling()
     {
-        return $this->hasMany(AboutBestSelling::class, 'about_id');
+        return $this->hasMany(Selling::class, 'about_id');
     }
 
     public function pages()

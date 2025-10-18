@@ -8,18 +8,17 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('about_faqs', function (Blueprint $table) {
+        Schema::create('vision_mission', function (Blueprint $table) {
             $table->id();
             $table->foreignId('about_id')->constrained('about_us')->onDelete('cascade');
-            $table->string('question');
-            $table->text('answer');
-            $table->integer('order')->default(0);
+            $table->text('vision')->nullable();
+            $table->text('mission')->nullable();
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('about_faqs');
+        Schema::dropIfExists('vision_mission');
     }
 };
